@@ -1,0 +1,283 @@
+{
+  "collection_id": "park_explorer",
+  "collection_name": "Park Explorer",
+  "version": 1,
+  "description": "Visit ten of the Eastern Suburbs' most popular parks and parklands. Drive through or along the main park entrance — no need to leave the road for a bushwalk.",
+  "unlock_rules": {
+    "max_speed_kmh": 40,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 30,
+    "repeat_visits_increase_familiarity": true,
+    "notes": "Parks are visited by car via main gates or perimeter roads (e.g. Grand Drive). Practise giving way to pedestrians and cyclists."
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "Green Break", "parks_required": 3 },
+    { "id": "silver", "name": "Park Regular", "parks_required": 6 },
+    { "id": "gold", "name": "Park Explorer", "parks_required": 10 }
+  ],
+  "combo_badges": [
+    {
+      "id": "parklands_trilogy",
+      "name": "Parklands Trilogy",
+      "park_ids": [
+        "centennial-park",
+        "queens-park",
+        "moore-park"
+      ]
+    },
+    {
+      "id": "harbour_parks",
+      "name": "Harbour Parks",
+      "park_ids": [
+        "robertson-park-watsons-bay",
+        "nielsen-park-vaucluse",
+        "rushcutters-bay-park"
+      ]
+    },
+    {
+      "id": "coastal_parks",
+      "name": "Coastal Parks",
+      "park_ids": [
+        "bronte-park",
+        "coogee-reserve",
+        "la-perouse-kamay"
+      ]
+    }
+  ],
+  "parks": [
+    {
+      "id": "centennial-park",
+      "rank": 1,
+      "name": "Centennial Park",
+      "suburb": "Centennial Park",
+      "region_id": "inner_east",
+      "type": "parklands",
+      "difficulty": "easy",
+      "logbook_goals": [10, 12],
+      "description": "Sydney's largest urban parkland — enter via Grand Drive near Federation Pavilion.",
+      "supervisor_notes": "Low speed, cyclists everywhere. Practise shared-space awareness on Grand Drive.",
+      "entrance_hint": "Federation Pavilion / Grand Drive main loop",
+      "centroid": { "lat": -33.8975, "lng": 151.2480 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8990,
+        "min_lng": 151.2460,
+        "max_lat": -33.8960,
+        "max_lng": 151.2500
+      }
+    },
+    {
+      "id": "queens-park",
+      "rank": 2,
+      "name": "Queens Park",
+      "suburb": "Queens Park",
+      "region_id": "inner_east",
+      "type": "parklands",
+      "difficulty": "easy",
+      "logbook_goals": [10],
+      "description": "Eastern edge of Centennial Parklands — open fields and sports ovals.",
+      "supervisor_notes": "Pair with Centennial Park in one lesson; enter from Darley Road or York Road.",
+      "entrance_hint": "Darley Road / York Road junction",
+      "centroid": { "lat": -33.8895, "lng": 151.2465 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8910,
+        "min_lng": 151.2448,
+        "max_lat": -33.8880,
+        "max_lng": 151.2482
+      }
+    },
+    {
+      "id": "moore-park",
+      "rank": 3,
+      "name": "Moore Park",
+      "suburb": "Moore Park",
+      "region_id": "inner_east",
+      "type": "parklands",
+      "difficulty": "medium",
+      "logbook_goals": [10, 19],
+      "description": "Northern Parklands section — Kippax Lake and Anzac Parade frontage.",
+      "supervisor_notes": "Busier near SCG/Allianz on event days; pick a quiet weekday first.",
+      "entrance_hint": "Anzac Parade / Kippax Lake",
+      "centroid": { "lat": -33.8880, "lng": 151.2240 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8895,
+        "min_lng": 151.2220,
+        "max_lat": -33.8865,
+        "max_lng": 151.2260
+      }
+    },
+    {
+      "id": "hyde-park",
+      "rank": 4,
+      "name": "Hyde Park",
+      "suburb": "Sydney",
+      "region_id": "city",
+      "type": "urban_park",
+      "difficulty": "medium",
+      "logbook_goals": [19],
+      "description": "CBD park perimeter — Elizabeth Street or Park Street pass-by in the free zone.",
+      "supervisor_notes": "Drive the park edge; do not stop in bus lanes. Good city-confidence practice.",
+      "entrance_hint": "Elizabeth Street / Park Street perimeter",
+      "centroid": { "lat": -33.8735, "lng": 151.2115 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8750,
+        "min_lng": 151.2100,
+        "max_lat": -33.8720,
+        "max_lng": 151.2130
+      }
+    },
+    {
+      "id": "robertson-park-watsons-bay",
+      "rank": 5,
+      "name": "Robertson Park",
+      "suburb": "Watsons Bay",
+      "region_id": "harbour",
+      "type": "harbour_park",
+      "difficulty": "easy",
+      "logbook_goals": [10],
+      "description": "Harbour-view park at Watsons Bay — pairs with the Coast Expedition northern endpoint.",
+      "supervisor_notes": "Very busy weekends; practise calm kerbside approach near the wharf.",
+      "entrance_hint": "Military Road / Watsons Bay wharf",
+      "centroid": { "lat": -33.8430, "lng": 151.2815 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8443,
+        "min_lng": 151.2800,
+        "max_lat": -33.8417,
+        "max_lng": 151.2830
+      }
+    },
+    {
+      "id": "nielsen-park-vaucluse",
+      "rank": 6,
+      "name": "Nielsen Park",
+      "suburb": "Vaucluse",
+      "region_id": "harbour",
+      "type": "harbour_park",
+      "difficulty": "medium",
+      "logbook_goals": [10],
+      "description": "Harbour beach park on Greycliffe Avenue — popular family picnic spot.",
+      "supervisor_notes": "Narrow approach road; watch for pedestrians crossing to the beach.",
+      "entrance_hint": "Greycliffe Avenue entrance",
+      "centroid": { "lat": -33.8515, "lng": 151.2690 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8528,
+        "min_lng": 151.2675,
+        "max_lat": -33.8502,
+        "max_lng": 151.2705
+      }
+    },
+    {
+      "id": "rushcutters-bay-park",
+      "rank": 7,
+      "name": "Rushcutters Bay Park",
+      "suburb": "Rushcutters Bay",
+      "region_id": "harbour",
+      "type": "harbour_park",
+      "difficulty": "medium",
+      "logbook_goals": [10, 19],
+      "description": "Harbour-side park on New South Head Road — yachts, joggers, and café traffic.",
+      "supervisor_notes": "Practise merging back onto New South Head Road after the park pass.",
+      "entrance_hint": "New South Head Road frontage",
+      "centroid": { "lat": -33.8755, "lng": 151.2305 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8768,
+        "min_lng": 151.2290,
+        "max_lat": -33.8742,
+        "max_lng": 151.2320
+      }
+    },
+    {
+      "id": "bronte-park",
+      "rank": 8,
+      "name": "Bronte Park",
+      "suburb": "Bronte",
+      "region_id": "coast",
+      "type": "coastal_park",
+      "difficulty": "medium",
+      "logbook_goals": [10],
+      "description": "Classic beachside park with picnic shelters overlooking Bronte Beach.",
+      "supervisor_notes": "Summer weekends are packed; aim for a weekday or early morning stamp.",
+      "entrance_hint": "Bronte Road / park oval",
+      "centroid": { "lat": -33.9040, "lng": 151.2645 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9053,
+        "min_lng": 151.2630,
+        "max_lat": -33.9027,
+        "max_lng": 151.2660
+      }
+    },
+    {
+      "id": "coogee-reserve",
+      "rank": 9,
+      "name": "Coogee Reserve",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "type": "coastal_park",
+      "difficulty": "medium",
+      "logbook_goals": [10],
+      "description": "Coastal reserve above Coogee Beach — includes Dunningham Reserve clifftop roads.",
+      "supervisor_notes": "Combine with Coogee car park or Arden Street hill badges in one coastal lesson.",
+      "entrance_hint": "Dunningham Reserve / Goldstein Reserve",
+      "centroid": { "lat": -33.9200, "lng": 151.2585 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9215,
+        "min_lng": 151.2570,
+        "max_lat": -33.9185,
+        "max_lng": 151.2600
+      }
+    },
+    {
+      "id": "la-perouse-kamay",
+      "rank": 10,
+      "name": "Kamay Botany Bay National Park (La Perouse)",
+      "suburb": "La Perouse",
+      "region_id": "botany_bay",
+      "type": "coastal_park",
+      "difficulty": "medium",
+      "logbook_goals": [10, 18],
+      "description": "Southern park entry near La Perouse Point — caps the coastal park collection.",
+      "supervisor_notes": "Pairs with Coast Expedition southern endpoint. Watch for tourists near Bare Island.",
+      "entrance_hint": "Anzac Parade / La Perouse loop",
+      "centroid": { "lat": -33.9885, "lng": 151.2315 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9900,
+        "min_lng": 151.2300,
+        "max_lat": -33.9870,
+        "max_lng": 151.2330
+      }
+    }
+  ],
+  "honourable_mentions": [
+    {
+      "id": "waverley-park-bondi",
+      "name": "Waverley Park",
+      "suburb": "Bondi",
+      "note": "Famous playground near Bondi — good extension for a Bondi-focused pack."
+    },
+    {
+      "id": "marks-park-tamarama",
+      "name": "Marks Park",
+      "suburb": "Tamarama",
+      "note": "Coastal walk stop with clifftop views — drive-by on Military Road."
+    },
+    {
+      "id": "heffron-park-maroubra",
+      "name": "Heffron Park",
+      "suburb": "Maroubra",
+      "note": "Large sports fields — wide roads, good for low-pressure practice."
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify at main park entrances.",
+    "visit_note": "Drive through the main park gate or perimeter road; walking the interior is optional and not required."
+  }
+}

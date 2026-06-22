@@ -1,0 +1,255 @@
+{
+  "collection_id": "scoop_seeker",
+  "collection_name": "Scoop Seeker",
+  "version": 1,
+  "description": "Street-front gelato and ice cream shops teenagers actually queue for. Every pin is on a main road or village street — park, walk to the window, no mall food courts.",
+  "eligibility_rules": {
+    "street_frontage_required": true,
+    "shopping_centre_excluded": true,
+    "access_types_allowed": ["street_front"],
+    "visit_mode": "drive_to_and_park",
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 30,
+    "max_speed_kmh": 35,
+    "notes": "Ice cream runs are supervisor rewards after parking. Learner does not use the phone at the shop window."
+  },
+  "advertising_model": {
+    "summary": "Ice cream is the easiest sell in Destination Drive — teens pick the flavour, parents pay, visit is already a planned reward after practice.",
+    "best_franchise_pitches": [
+      {
+        "brand": "Gelato Messina",
+        "sites_in_play_area": ["bondi", "randwick"],
+        "pitch": "Two eastern-suburbs stores in one bundle; weekly specials drive repeat visits."
+      },
+      {
+        "brand": "Gelatissimo",
+        "sites_in_play_area": ["coogee"],
+        "pitch": "Coogee beach loop finale — pair with Coogee Pavilion or Chargrill."
+      },
+      {
+        "brand": "Anita Gelato",
+        "sites_in_play_area": ["bondi"],
+        "pitch": "150+ flavours; premium scoop shop on Campbell Parade strip."
+      }
+    ],
+    "suggested_offers": [
+      "10% off two scoops",
+      "Free topping on any cup",
+      "Upgrade to waffle cone on visit unlock"
+    ]
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "First Scoop", "shops_required": 3 },
+    { "id": "silver", "name": "Gelato Regular", "shops_required": 5 },
+    { "id": "gold", "name": "Scoop Seeker", "shops_required": 8 }
+  ],
+  "combo_badges": [
+    {
+      "id": "bondi_scoop_crawl",
+      "name": "Bondi Scoop Crawl",
+      "description": "Visit every Bondi ice cream stop in one play area.",
+      "shop_ids": [
+        "gelato-messina-bondi",
+        "anita-gelato-bondi",
+        "luca-luca-bondi",
+        "ben-and-jerrys-bondi",
+        "rivareno-gelato-bondi"
+      ]
+    },
+    {
+      "id": "randwick_sweet_spot",
+      "name": "Randwick Sweet Spot",
+      "description": "Messina and Gaia on a Randwick village loop.",
+      "shop_ids": [
+        "gelato-messina-randwick",
+        "gaia-gelato-randwick"
+      ]
+    }
+  ],
+  "shops": [
+    {
+      "id": "gelato-messina-bondi",
+      "rank": 1,
+      "name": "Gelato Messina Bondi",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Weekly specials, Fairy Bread lore, Instagram queues",
+      "partner_potential": "high",
+      "street_address": "6/61 Hall Street, Bondi Beach NSW 2026",
+      "description": "Hall Street shopfront off Campbell Parade — Sydney's most famous gelato queue.",
+      "supervisor_notes": "Park on Hall Street or nearby; expect foot traffic spilling from Campbell Parade.",
+      "centroid": { "lat": -33.8888, "lng": 151.2738 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8903,
+        "min_lng": 151.2723,
+        "max_lat": -33.8873,
+        "max_lng": 151.2753
+      },
+      "suggested_offer": "10% off two scoops (partner placeholder)"
+    },
+    {
+      "id": "gelato-messina-randwick",
+      "rank": 2,
+      "name": "Gelato Messina Randwick",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Second Messina in the play area — evening hangout near The Spot",
+      "partner_potential": "high",
+      "street_address": "Shop G08, 162 Barker Street, Randwick NSW 2031",
+      "description": "Ground-floor Newmarket frontage on Barker Street — drive up Barker, park on street.",
+      "supervisor_notes": "Newmarket is open-air retail on Barker St, not an enclosed mall like Westfield.",
+      "centroid": { "lat": -33.9148, "lng": 151.2392 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9163,
+        "min_lng": 151.2377,
+        "max_lat": -33.9133,
+        "max_lng": 151.2407
+      },
+      "suggested_offer": "10% off two scoops (partner placeholder)"
+    },
+    {
+      "id": "anita-gelato-bondi",
+      "rank": 3,
+      "name": "Anita Gelato Bondi",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "150+ rotating flavours, Mama Anita recipes, zero-sugar options",
+      "partner_potential": "medium",
+      "street_address": "180 Campbell Parade, Bondi Beach NSW 2026",
+      "description": "Campbell Parade shopfront — direct street frontage on the beach strip.",
+      "supervisor_notes": "Parallel park on Campbell Parade or side streets; very busy on summer evenings.",
+      "centroid": { "lat": -33.8885, "lng": 151.2762 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8900,
+        "min_lng": 151.2747,
+        "max_lat": -33.8870,
+        "max_lng": 151.2777
+      },
+      "suggested_offer": "Free topping on any cup (partner placeholder)"
+    },
+    {
+      "id": "luca-luca-bondi",
+      "rank": 4,
+      "name": "Luca & Luca",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Harry's crew gelato — matcha, soft serve, limited drops",
+      "partner_potential": "medium",
+      "street_address": "222 Campbell Parade, North Bondi NSW 2026",
+      "description": "North Bondi Campbell Parade corner — artisan gelato from the Harry's family.",
+      "supervisor_notes": "Quieter than central Bondi; good north-Bondi coastal drive loop stop.",
+      "centroid": { "lat": -33.8875, "lng": 151.2770 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8890,
+        "min_lng": 151.2755,
+        "max_lat": -33.8860,
+        "max_lng": 151.2785
+      },
+      "suggested_offer": "10% off two scoops (partner placeholder)"
+    },
+    {
+      "id": "ben-and-jerrys-bondi",
+      "rank": 5,
+      "name": "Ben & Jerry's Bondi Beach",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "ice_cream",
+      "access_type": "street_front",
+      "teen_appeal": "Chunky flavours, milkshakes, familiar US brand",
+      "partner_potential": "medium",
+      "street_address": "Shop 3, 152 Campbell Parade, Bondi Beach NSW 2026",
+      "description": "Campbell Parade scoop shop — street-front, not a mall kiosk.",
+      "supervisor_notes": "Next to McDonald's Bondi; combine drive-thru + scoop shop in one lesson reward.",
+      "centroid": { "lat": -33.8908, "lng": 151.2750 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8923,
+        "min_lng": 151.2735,
+        "max_lat": -33.8893,
+        "max_lng": 151.2765
+      },
+      "suggested_offer": "Free topping on a sundae (partner placeholder)"
+    },
+    {
+      "id": "gelatissimo-coogee",
+      "rank": 6,
+      "name": "Gelatissimo Coogee",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Beach-side gelato, shakes, classic coastal treat",
+      "partner_potential": "medium",
+      "street_address": "258 Coogee Bay Road, Coogee NSW 2034",
+      "description": "Coogee Bay Road shopfront walking distance from the beach.",
+      "supervisor_notes": "Park on Coogee Bay Road or beach car parks; eat on the sand after.",
+      "centroid": { "lat": -33.9188, "lng": 151.2592 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9203,
+        "min_lng": 151.2577,
+        "max_lat": -33.9173,
+        "max_lng": 151.2607
+      },
+      "suggested_offer": "10% off two scoops (partner placeholder)"
+    },
+    {
+      "id": "gaia-gelato-randwick",
+      "rank": 7,
+      "name": "Gaia Gelato",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Artisan small-batch gelato at The Spot — local teen favourite",
+      "partner_potential": "medium",
+      "street_address": "50 Perouse Road, Randwick NSW 2031",
+      "description": "The Spot village street — Perouse Road shopfront near Randwick shops.",
+      "supervisor_notes": "Village streets around The Spot; pair with Messina Randwick on Barker Street.",
+      "centroid": { "lat": -33.9142, "lng": 151.2450 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9157,
+        "min_lng": 151.2435,
+        "max_lat": -33.9127,
+        "max_lng": 151.2465
+      },
+      "suggested_offer": "Free topping on any cup (partner placeholder)"
+    },
+    {
+      "id": "rivareno-gelato-bondi",
+      "rank": 8,
+      "name": "Rivareno Gelato Bondi",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "gelato",
+      "access_type": "street_front",
+      "teen_appeal": "Italian artisan gelato on Campbell Parade — daily fresh batches",
+      "partner_potential": "medium",
+      "street_address": "Retail 2/124 Campbell Parade, Bondi Beach NSW 2026",
+      "description": "Campbell Parade shopfront — completes the Bondi scoop strip.",
+      "supervisor_notes": "Central Campbell Parade; combine with Anita or Messina on a Bondi lesson finale.",
+      "centroid": { "lat": -33.8900, "lng": 151.2758 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8915,
+        "min_lng": 151.2743,
+        "max_lat": -33.8885,
+        "max_lng": 151.2773
+      },
+      "suggested_offer": "10% off two scoops (partner placeholder)"
+    }
+  ]
+}

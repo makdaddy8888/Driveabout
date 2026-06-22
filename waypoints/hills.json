@@ -1,0 +1,266 @@
+{
+  "collection_id": "hill_start_hero",
+  "collection_name": "Hill Start Hero",
+  "version": 1,
+  "description": "Collect ten hill-start waypoints across Sydney's Eastern Suburbs. Stop safely on an incline, move off smoothly, and have the supervisor confirm the first clean attempt.",
+  "unlock_rules": {
+    "max_speed_kmh": 15,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 15,
+    "requires_stop_before_confirm": true,
+    "repeat_visits_increase_familiarity": true
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "First Climb", "hill_starts_required": 3 },
+    { "id": "silver", "name": "Steady on the Slope", "hill_starts_required": 6 },
+    { "id": "gold", "name": "Hill Start Hero", "hill_starts_required": 10 }
+  ],
+  "combo_badges": [
+    {
+      "id": "harbour_heights",
+      "name": "Harbour Heights",
+      "hill_ids": [
+        "old-south-head-rd-vaucluse",
+        "hopetoun-ave-vaucluse",
+        "drumalbyn-rd-bellevue-hill"
+      ]
+    },
+    {
+      "id": "eastern_escarpment",
+      "name": "Eastern Escarpment",
+      "hill_ids": [
+        "dover-rd-dover-heights",
+        "military-rd-dover-heights",
+        "ocean-st-edgecliff"
+      ]
+    },
+    {
+      "id": "coastal_climbs",
+      "name": "Coastal Climbs",
+      "hill_ids": [
+        "bronte-rd-bronte",
+        "arden-st-coogee",
+        "malabar-rd-maroubra"
+      ]
+    }
+  ],
+  "hills": [
+    {
+      "id": "old-south-head-rd-vaucluse",
+      "rank": 1,
+      "name": "Old South Head Road Rise",
+      "suburb": "Vaucluse",
+      "region_id": "harbour",
+      "difficulty": "easy",
+      "logbook_goals": [13],
+      "description": "Gentle uphill start option on a broad Vaucluse corridor.",
+      "supervisor_notes": "Good first hill-start badge. Choose a quiet period and practise securing with the park brake before moving off.",
+      "centroid": { "lat": -33.8586, "lng": 151.2796 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8594,
+        "min_lng": 151.2783,
+        "max_lat": -33.8578,
+        "max_lng": 151.2808
+      }
+    },
+    {
+      "id": "hopetoun-ave-vaucluse",
+      "rank": 2,
+      "name": "Hopetoun Avenue Climb",
+      "suburb": "Vaucluse",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [13, 8],
+      "description": "Narrower harbour-side incline that mixes slope control with tight positioning.",
+      "supervisor_notes": "Combine with Narrow Street practice only once the learner is comfortable. Keep sessions short.",
+      "centroid": { "lat": -33.8508, "lng": 151.2807 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8518,
+        "min_lng": 151.2794,
+        "max_lat": -33.8498,
+        "max_lng": 151.2820
+      }
+    },
+    {
+      "id": "drumalbyn-rd-bellevue-hill",
+      "rank": 3,
+      "name": "Drumalbyn Road Slope",
+      "suburb": "Bellevue Hill",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [13],
+      "description": "Residential incline with a clear uphill restart opportunity.",
+      "supervisor_notes": "Watch parked cars near the pinch point and pick a segment with good visibility.",
+      "centroid": { "lat": -33.8862, "lng": 151.2558 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8874,
+        "min_lng": 151.2544,
+        "max_lat": -33.8850,
+        "max_lng": 151.2573
+      }
+    },
+    {
+      "id": "victoria-rd-bellevue-hill",
+      "rank": 4,
+      "name": "Victoria Road Crest",
+      "suburb": "Bellevue Hill",
+      "region_id": "harbour",
+      "difficulty": "easy",
+      "logbook_goals": [13],
+      "description": "Useful mid-suburb gradient for repeated smooth uphill launches.",
+      "supervisor_notes": "Aim for clean clutch or brake release with no rollback; repeat a few times rather than hunting for steeper hills.",
+      "centroid": { "lat": -33.8812, "lng": 151.2522 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8822,
+        "min_lng": 151.2508,
+        "max_lat": -33.8802,
+        "max_lng": 151.2536
+      }
+    },
+    {
+      "id": "dover-rd-dover-heights",
+      "rank": 5,
+      "name": "Dover Road Hill Start",
+      "suburb": "Dover Heights",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [13],
+      "description": "Classic Eastern Suburbs incline with stronger grade than the introductory Vaucluse roads.",
+      "supervisor_notes": "Best in lighter traffic. Keep the learner focused on observation before moving off, not just the hill itself.",
+      "centroid": { "lat": -33.8716, "lng": 151.2831 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8728,
+        "min_lng": 151.2817,
+        "max_lat": -33.8704,
+        "max_lng": 151.2844
+      }
+    },
+    {
+      "id": "military-rd-dover-heights",
+      "rank": 6,
+      "name": "Military Road Approach",
+      "suburb": "Dover Heights",
+      "region_id": "harbour",
+      "difficulty": "hard",
+      "logbook_goals": [13, 10],
+      "description": "Steeper approach road where traffic awareness matters as much as the gradient.",
+      "supervisor_notes": "Only attempt after easier hill badges. Choose off-peak and avoid pushing through if traffic builds.",
+      "centroid": { "lat": -33.8690, "lng": 151.2798 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8701,
+        "min_lng": 151.2783,
+        "max_lat": -33.8679,
+        "max_lng": 151.2812
+      }
+    },
+    {
+      "id": "ocean-st-edgecliff",
+      "rank": 7,
+      "name": "Ocean Street Rise",
+      "suburb": "Edgecliff",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [13, 19],
+      "description": "Inner-city slope useful for combining hill starts with busier urban driving.",
+      "supervisor_notes": "A good transition from quiet streets to more complex environments. Keep eyes well ahead for pedestrians and buses.",
+      "centroid": { "lat": -33.8788, "lng": 151.2404 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8798,
+        "min_lng": 151.2390,
+        "max_lat": -33.8778,
+        "max_lng": 151.2418
+      }
+    },
+    {
+      "id": "bronte-rd-bronte",
+      "rank": 8,
+      "name": "Bronte Road Descent/Climb",
+      "suburb": "Bronte",
+      "region_id": "coast",
+      "difficulty": "medium",
+      "logbook_goals": [13],
+      "description": "Coastal gradient leading toward Bronte Beach, good for repeated hill starts outside the harbour zone.",
+      "supervisor_notes": "Pick a calm time; combine with Beach Pack only after the learner is comfortable with the slope.",
+      "centroid": { "lat": -33.9012, "lng": 151.2621 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9024,
+        "min_lng": 151.2607,
+        "max_lat": -33.9000,
+        "max_lng": 151.2635
+      }
+    },
+    {
+      "id": "arden-st-coogee",
+      "rank": 9,
+      "name": "Arden Street Climb",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "difficulty": "medium",
+      "logbook_goals": [13],
+      "description": "Well-known Coogee incline with enough gradient to build confidence without going extreme.",
+      "supervisor_notes": "Ideal after a Coogee car-park session; reset calmly between attempts to avoid rushed starts.",
+      "centroid": { "lat": -33.9184, "lng": 151.2550 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9195,
+        "min_lng": 151.2536,
+        "max_lat": -33.9173,
+        "max_lng": 151.2564
+      }
+    },
+    {
+      "id": "malabar-rd-maroubra",
+      "rank": 10,
+      "name": "Malabar Road Rise",
+      "suburb": "Maroubra",
+      "region_id": "coast",
+      "difficulty": "hard",
+      "logbook_goals": [13],
+      "description": "Steeper southern coastal hill for the capstone hill-start badge.",
+      "supervisor_notes": "Treat as the final unlock in the set. Use daylight, low traffic, and only after several easier successful climbs.",
+      "centroid": { "lat": -33.9446, "lng": 151.2512 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9458,
+        "min_lng": 151.2498,
+        "max_lat": -33.9434,
+        "max_lng": 151.2526
+      }
+    }
+  ],
+  "honourable_mentions": [
+    {
+      "id": "new-south-head-rd-rose-bay",
+      "name": "New South Head Road rise",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "note": "Busy corridor; better for advanced urban hill starts than beginner practice."
+    },
+    {
+      "id": "birriga-rd-bellevue-hill",
+      "name": "Birriga Road",
+      "suburb": "Bellevue Hill",
+      "region_id": "harbour",
+      "note": "Steep local option if you want a Bellevue Hill-only collection later."
+    },
+    {
+      "id": "clovelly-rd-waverley",
+      "name": "Clovelly Road approach",
+      "suburb": "Waverley",
+      "region_id": "coast",
+      "note": "Good extension for a future coastal hill pack."
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify on-site before production.",
+    "safety_note": "Supervisor should only confirm after a full stop on the incline and a smooth move-off with no unsafe rollback."
+  }
+}

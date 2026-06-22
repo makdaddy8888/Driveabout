@@ -1,0 +1,148 @@
+{
+  "collection_id": "service_nsw_trail",
+  "collection_name": "Service NSW Trail",
+  "version": 1,
+  "description": "Visit every Service NSW centre in the Eastern Suburbs play area that has street-front access on a main road. Shopping-centre branches do not count — no detours into Westfield.",
+  "eligibility_rules": {
+    "street_frontage_required": true,
+    "shopping_centre_excluded": true,
+    "visit_mode": "drive_by_or_park_nearby",
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 20,
+    "notes": "Learners practise approaching a government service centre on a real street, finding parking, and rejoining traffic. No need to enter the shop."
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "Paperwork Pit Stop", "locations_required": 2 },
+    { "id": "silver", "name": "Licence Lane", "locations_required": 4 },
+    { "id": "gold", "name": "Service NSW Trail Complete", "locations_required": "all_eligible" }
+  ],
+  "excluded_locations": [
+    {
+      "name": "Bondi Junction Service Centre",
+      "address": "Shop G2, 19-23 Hollywood Avenue, Bondi Junction",
+      "reason": "Inside Westfield Bondi Junction — shopping-centre branch."
+    },
+    {
+      "name": "Eastgardens Service Centre",
+      "address": "Shop 227/9B, Level 2, Westfield Eastgardens, 152 Bunnerong Road",
+      "reason": "Inside Westfield Eastgardens — shopping-centre branch."
+    }
+  ],
+  "locations": [
+    {
+      "id": "wynyard-service-nsw",
+      "rank": 1,
+      "name": "Wynyard Service Centre",
+      "address": "19 York Street, Sydney NSW 2000",
+      "suburb": "Sydney",
+      "region_id": "city",
+      "street_frontage": true,
+      "main_road": "York Street",
+      "difficulty": "hard",
+      "logbook_goals": [19],
+      "description": "CBD street-front Service NSW on York Street — busy city traffic and pedestrian crossings.",
+      "supervisor_notes": "Practise kerb approach and lane discipline; no need to go inside. Off-peak first visit.",
+      "centroid": { "lat": -33.8658, "lng": 151.2062 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8668,
+        "min_lng": 151.2050,
+        "max_lat": -33.8648,
+        "max_lng": 151.2075
+      }
+    },
+    {
+      "id": "haymarket-service-nsw",
+      "rank": 2,
+      "name": "Haymarket Service Centre",
+      "address": "2-24 Rawson Place, Sydney NSW 2000",
+      "suburb": "Haymarket",
+      "region_id": "city",
+      "street_frontage": true,
+      "main_road": "Rawson Place",
+      "difficulty": "medium",
+      "logbook_goals": [19],
+      "description": "Ground-floor centre on Rawson Place near Darling Harbour — street access, not a mall.",
+      "supervisor_notes": "Watch for trams, tour buses, and heavy foot traffic near Chinatown.",
+      "centroid": { "lat": -33.8795, "lng": 151.2035 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8808,
+        "min_lng": 151.2020,
+        "max_lat": -33.8782,
+        "max_lng": 151.2050
+      }
+    },
+    {
+      "id": "darlinghurst-service-nsw",
+      "rank": 3,
+      "name": "Darlinghurst Service Centre",
+      "address": "137-153 Crown Street, Darlinghurst NSW 2010",
+      "suburb": "Darlinghurst",
+      "region_id": "city",
+      "street_frontage": true,
+      "main_road": "Crown Street",
+      "difficulty": "medium",
+      "logbook_goals": [19],
+      "description": "Inner-city Crown Street frontage — common eastern-corridor access point.",
+      "supervisor_notes": "Good link between CBD practice and Eastern Suburbs drives; watch for narrow lanes.",
+      "centroid": { "lat": -33.8798, "lng": 151.2155 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8810,
+        "min_lng": 151.2140,
+        "max_lat": -33.8786,
+        "max_lng": 151.2170
+      }
+    },
+    {
+      "id": "redfern-service-nsw",
+      "rank": 4,
+      "name": "Redfern Service Centre",
+      "address": "140 Redfern Street, Redfern NSW 2016",
+      "suburb": "Redfern",
+      "region_id": "city",
+      "street_frontage": true,
+      "main_road": "Redfern Street",
+      "difficulty": "medium",
+      "logbook_goals": [19],
+      "description": "Street-front centre on Redfern Street — suburban main road, not a shopping complex.",
+      "supervisor_notes": "Practise parallel parking or kerbside stop nearby if continuing the lesson.",
+      "centroid": { "lat": -33.8932, "lng": 151.2038 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8945,
+        "min_lng": 151.2025,
+        "max_lat": -33.8919,
+        "max_lng": 151.2052
+      }
+    },
+    {
+      "id": "botany-service-nsw",
+      "rank": 5,
+      "name": "Botany Service Centre",
+      "address": "5 Lord Street, Botany NSW 2019",
+      "suburb": "Botany",
+      "region_id": "botany_bay",
+      "street_frontage": true,
+      "main_road": "Lord Street",
+      "difficulty": "easy",
+      "logbook_goals": [19],
+      "description": "Purpose-built street-level centre on Lord Street — also a driving-test hub for southern Sydney.",
+      "supervisor_notes": "Easiest stamp on the trail. On-site parking; good for practising approach and exit on a main road.",
+      "centroid": { "lat": -33.9465, "lng": 151.2075 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9478,
+        "min_lng": 151.2060,
+        "max_lat": -33.9452,
+        "max_lng": 151.2090
+      }
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify on-site before production.",
+    "scope_note": "Only Service NSW centres inside the Eastern Suburbs play envelope with street-front access are eligible. Bondi Junction and Eastgardens are deliberately excluded.",
+    "nearest_mall_branches": "Learners needing Bondi Junction or Eastgardens should park at street level and walk in — that visit does not count for this trail."
+  }
+}

@@ -62,9 +62,12 @@ GPS while driving  →  grid cells visited  →  fog lifts on the map
 | Collection | Example |
 |------------|---------|
 | **Narrow Street Navigator** | Chaleyer St, Shadforth St, Atherden St, Argyle Lane — [full list](waypoints/narrow-streets.json) |
-| Parking Lot Explorer | *planned* — navigate 10 car parks |
-| Hill Start Hero | *planned* — curated gradient waypoints |
-| Roundabout Ranger | *planned* — stamp collection per roundabout |
+| **Parking Lot Explorer** | Bondi Beach, Westfield Bondi Junction, East Village — [full list](waypoints/car-parks.json) |
+| **Hill Start Hero** | Vaucluse, Bellevue Hill, Dover Heights, Bronte, Coogee — [full list](waypoints/hills.json) |
+| **Roundabout Ranger** | Centennial Park, Bondi Junction, Coogee, Woolloomooloo — [full list](waypoints/roundabouts.json) |
+| **Coast Expedition** | Watsons Bay ↔ La Perouse in one drive — [day + night](waypoints/expeditions.json) |
+| **Service NSW Trail** | Wynyard, Haymarket, Darlinghurst, Redfern, Botany — [street-front only](waypoints/service-nsw.json) |
+| **Park Explorer** | Centennial, Queens Park, Nielsen Park, Bronte — [10 parks](waypoints/parks.json) |
 
 ---
 

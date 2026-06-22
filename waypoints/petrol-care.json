@@ -1,0 +1,254 @@
+{
+  "collection_id": "vehicle_care_cadet",
+  "collection_name": "Vehicle Care Cadet",
+  "version": 1,
+  "description": "Petrol stations on main roads where the supervising adult guides a parked vehicle check — tyre pressures, windscreen washer fluid, and basic under-bonnet awareness. Unlocks practical skills every learner should know before driving solo.",
+  "legal": {
+    "notes": "All checks happen with the engine off and the car parked in a designated bay. Supervisor performs or closely supervises any under-bonnet work. Not a substitute for a professional service."
+  },
+  "unlock_rules": {
+    "max_speed_kmh": 30,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 60,
+    "engine_off_for_checks": true,
+    "repeat_visits_increase_familiarity": false,
+    "notes": "Visit unlocks a guided checklist. Supervisor ticks off each item after the learner completes it (or assists safely)."
+  },
+  "checklist_modules": [
+    {
+      "id": "tyre_pressure",
+      "name": "Tyre pressure check",
+      "description": "Locate recommended PSI on the door jamb sticker. Use the servo air hose to check all four tyres (and spare if accessible).",
+      "logbook_goals": [19],
+      "unlocks_after_stations": 1
+    },
+    {
+      "id": "washer_fluid",
+      "name": "Windscreen washer fluid",
+      "description": "Open bonnet (supervisor assist). Locate washer reservoir; top up with water or washer fluid from the servo shop.",
+      "logbook_goals": [19],
+      "unlocks_after_stations": 2
+    },
+    {
+      "id": "tyre_condition",
+      "name": "Tyre tread and condition",
+      "description": "Check tread depth (wear bars) and look for cuts, bulges, or uneven wear on all four tyres.",
+      "logbook_goals": [19],
+      "unlocks_after_stations": 3
+    },
+    {
+      "id": "wipers_and_lights",
+      "name": "Wipers and lights walk-around",
+      "description": "Test wipers and washer spray. Walk around the car and verify headlights, tail-lights, and indicators with the supervisor.",
+      "logbook_goals": [17, 19],
+      "unlocks_after_stations": 4
+    },
+    {
+      "id": "oil_dipstick_basics",
+      "name": "Oil level (dipstick basics)",
+      "description": "Engine off, car level. Supervisor guides locating the dipstick, reading the level between marks. Top-up only if supervisor agrees.",
+      "logbook_goals": [19],
+      "unlocks_after_stations": 5,
+      "supervisor_only": true
+    }
+  ],
+  "achievement_tiers": [
+    { "id": "bronze", "name": "Air & Water", "modules_required": 2 },
+    { "id": "silver", "name": "Road Ready Checks", "modules_required": 4 },
+    { "id": "gold", "name": "Vehicle Care Cadet", "modules_required": 5 }
+  ],
+  "combo_badges": [
+    {
+      "id": "three_servos",
+      "name": "Three Servos",
+      "description": "Complete at least one checklist module at three different stations.",
+      "min_unique_stations": 3
+    }
+  ],
+  "stations": [
+    {
+      "id": "bp-rose-bay",
+      "rank": 1,
+      "name": "BP Rose Bay",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "brand": "BP",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "easy",
+      "description": "New South Head Road servo beside Crystal Car Wash — air hose and shop for washer fluid.",
+      "supervisor_notes": "Enter forecourt slowly; practise positioning next to the air pump bay.",
+      "street_address": "777 New South Head Road, Rose Bay NSW 2029",
+      "centroid": { "lat": -33.8700, "lng": 151.2715 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8715,
+        "min_lng": 151.2700,
+        "max_lat": -33.8685,
+        "max_lng": 151.2730
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights", "oil_dipstick_basics"]
+    },
+    {
+      "id": "ampol-double-bay",
+      "rank": 2,
+      "name": "Ampol Double Bay",
+      "suburb": "Double Bay",
+      "region_id": "harbour",
+      "brand": "Ampol",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "medium",
+      "description": "Oxford Street forecourt — busy harbour-strip servo with air and convenience shop.",
+      "supervisor_notes": "Oxford Street traffic from the west; practise merging into the servo entrance.",
+      "street_address": "536 New South Head Road, Double Bay NSW 2028",
+      "centroid": { "lat": -33.8775, "lng": 151.2435 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8790,
+        "min_lng": 151.2420,
+        "max_lat": -33.8760,
+        "max_lng": 151.2450
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights"]
+    },
+    {
+      "id": "shell-bondi-junction",
+      "rank": 3,
+      "name": "Shell Bondi Junction",
+      "suburb": "Bondi Junction",
+      "region_id": "inner_east",
+      "brand": "Shell",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "hard",
+      "description": "Oxford Street / Syd Einfeld Drive area — high-traffic inner-east servo.",
+      "supervisor_notes": "Multi-lane approach; not for first lessons. Good for confident learners.",
+      "street_address": "116 Oxford Street, Bondi Junction NSW 2022",
+      "centroid": { "lat": -33.8905, "lng": 151.2475 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8920,
+        "min_lng": 151.2460,
+        "max_lat": -33.8890,
+        "max_lng": 151.2490
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights", "oil_dipstick_basics"]
+    },
+    {
+      "id": "ampol-randwick",
+      "rank": 4,
+      "name": "Ampol Randwick",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "brand": "Ampol",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "easy",
+      "description": "Avoca Street servo near the Randwick civic centre — calmer than Oxford Street.",
+      "supervisor_notes": "Good first servo visit for tyre-pressure module.",
+      "street_address": "73 Avoca Street, Randwick NSW 2031",
+      "centroid": { "lat": -33.9145, "lng": 151.2415 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9160,
+        "min_lng": 151.2400,
+        "max_lat": -33.9130,
+        "max_lng": 151.2430
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights"]
+    },
+    {
+      "id": "metro-maroubra",
+      "rank": 5,
+      "name": "Metro Petroleum Maroubra",
+      "suburb": "Maroubra",
+      "region_id": "coast",
+      "brand": "Metro",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "easy",
+      "description": "Anzac Parade coastal-corridor servo — pairs with Maroubra beach lessons.",
+      "supervisor_notes": "Anzac Parade is a major arterial; practise lane changes before turning in.",
+      "street_address": "822 Anzac Parade, Maroubra NSW 2035",
+      "centroid": { "lat": -33.9445, "lng": 151.2395 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9460,
+        "min_lng": 151.2380,
+        "max_lat": -33.9430,
+        "max_lng": 151.2410
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights"]
+    },
+    {
+      "id": "7eleven-coogee",
+      "rank": 6,
+      "name": "7-Eleven Coogee",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "brand": "7-Eleven",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "easy",
+      "description": "Coogee Bay Road fuel and convenience — washer fluid in store, air out front.",
+      "supervisor_notes": "Beach traffic on weekends; weekday mornings are quieter.",
+      "street_address": "176 Coogee Bay Road, Coogee NSW 2034",
+      "centroid": { "lat": -33.9220, "lng": 151.2555 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9235,
+        "min_lng": 151.2540,
+        "max_lat": -33.9205,
+        "max_lng": 151.2570
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights"]
+    },
+    {
+      "id": "ampol-kingsford",
+      "rank": 7,
+      "name": "Ampol Kingsford",
+      "suburb": "Kingsford",
+      "region_id": "inner_east",
+      "brand": "Ampol",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "medium",
+      "description": "Anzac Parade near UNSW — busy student-corridor servo.",
+      "supervisor_notes": "Heavy bus and student pedestrian traffic nearby.",
+      "street_address": "464 Anzac Parade, Kingsford NSW 2032",
+      "centroid": { "lat": -33.9245, "lng": 151.2275 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9260,
+        "min_lng": 151.2260,
+        "max_lat": -33.9230,
+        "max_lng": 151.2290
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights", "oil_dipstick_basics"]
+    },
+    {
+      "id": "bp-rushcutters-bay",
+      "rank": 8,
+      "name": "BP Rushcutters Bay",
+      "suburb": "Rushcutters Bay",
+      "region_id": "harbour",
+      "brand": "BP",
+      "has_air_pump": true,
+      "has_shop": true,
+      "difficulty": "easy",
+      "description": "New South Head Road near Rushcutters Bay Park — harbour-side servo.",
+      "supervisor_notes": "Pair with Rushcutters Bay park visit or Crystal Car Wash Rushcutters Bay.",
+      "street_address": "100 New South Head Road, Rushcutters Bay NSW 2011",
+      "centroid": { "lat": -33.8745, "lng": 151.2355 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8760,
+        "min_lng": 151.2340,
+        "max_lat": -33.8730,
+        "max_lng": 151.2370
+      },
+      "modules_available": ["tyre_pressure", "washer_fluid", "tyre_condition", "wipers_and_lights"]
+    }
+  ]
+}

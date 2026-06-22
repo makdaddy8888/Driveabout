@@ -59,6 +59,29 @@ The play area is split into five zones. Overlaps resolve by priority (city first
 
 This keeps storage bounded (finite cell count per zone), gives a clear free trial, and creates a natural upgrade path as learners venture beyond the city.
 
+### Partner & destination monetisation (B2B)
+
+A second revenue stream sits alongside zone IAP: **sponsored waypoints**.
+
+| Layer | Who pays | What they get |
+|-------|----------|---------------|
+| **Zone IAP** | Learner / supervisor | Fog clears; visits recorded in that region |
+| **Partner waypoint** | Local business | Featured pin, visit attribution, optional in-app coupon |
+| **Vehicle care** | Petrol brand (optional) | Sponsored checklist station; practical learner value |
+
+**Destination Drive** (`waypoints/partner-destinations.json`) — twenty **street-front or drive-thru** spots (Krispy Kreme, Chargrill Charlie's, Crystal Car Wash, Messina, standalone cinemas, etc.). Shopping-centre food courts and mall cinemas are excluded — same eligibility idea as the Service NSW trail. When GPS confirms a parked visit, the app can unlock a partner discount code.
+
+**Advertising packages** (see `advertising_model` in the JSON): featured pin, visit-unlock coupon, and franchise bundle (e.g. all Chargrill or Crystal street sites in one deal). Partners receive anonymized visit metrics — day/time histograms, repeat rates — not learner PII.
+
+**Vehicle Care Cadet** (`waypoints/petrol-care.json`) — eight main-road petrol stations where the supervisor guides a parked checklist: tyre pressures, washer fluid, tread check, wipers/lights, and dipstick basics. Each module unlocks after visiting enough unique servos — teaching real maintenance without gamifying unsafe in-car phone use.
+
+Rules:
+
+- Sponsored pins are **labelled** in-app (ACCC-style disclosure).
+- Coupons redeem **only when parked** — supervisor holds the phone throughout.
+- Partners outside the GPS envelope (e.g. Krispy Kreme Mascot) still count toward achievements but use an `expedition` region tag.
+- v1 can ship with placeholder `suggested_offer` strings; backend swaps live codes when a deal is signed.
+
 ---
 
 ## Visit data model

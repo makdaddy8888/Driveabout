@@ -1,0 +1,292 @@
+{
+  "collection_id": "parking_lot_explorer",
+  "collection_name": "Parking Lot Explorer",
+  "version": 1,
+  "description": "Visit and navigate ten Eastern Suburbs car parks. Enter, drive slowly through, and exit — supervisor confirms each first completion.",
+  "unlock_rules": {
+    "max_speed_kmh": 20,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 60,
+    "repeat_visits_increase_familiarity": true,
+    "requires_motion_inside": true
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "Park & Ride", "car_parks_required": 3 },
+    { "id": "silver", "name": "Lot Local", "car_parks_required": 6 },
+    { "id": "gold", "name": "Parking Lot Explorer", "car_parks_required": 10 },
+    { "id": "platinum", "name": "Multi-Level Master", "requires_type": "multi_level" }
+  ],
+  "combo_badges": [
+    {
+      "id": "beach_pack",
+      "name": "Beach Pack",
+      "car_park_ids": [
+        "bondi-beach-car-park",
+        "coogee-beach-car-park",
+        "bronte-beach-car-park",
+        "maroubra-beach-car-park"
+      ]
+    },
+    {
+      "id": "shop_pack",
+      "name": "Shop Pack",
+      "car_park_ids": [
+        "east-village-zetland",
+        "royal-randwick-shopping-centre",
+        "westfield-bondi-junction"
+      ]
+    },
+    {
+      "id": "harbour_pack",
+      "name": "Harbour Pack",
+      "car_park_ids": [
+        "rose-bay-village-car-park",
+        "double-bay-civic-car-park"
+      ]
+    },
+    {
+      "id": "weekend_warrior",
+      "name": "Weekend Warrior",
+      "note": "Navigate any beach car park on Saturday or Sunday.",
+      "car_park_ids": [
+        "bondi-beach-car-park",
+        "coogee-beach-car-park",
+        "bronte-beach-car-park",
+        "maroubra-beach-car-park"
+      ],
+      "requires_weekend": true
+    }
+  ],
+  "car_parks": [
+    {
+      "id": "opera-house-car-park",
+      "rank": 1,
+      "name": "Sydney Opera House Car Park",
+      "suburb": "Sydney",
+      "region_id": "city",
+      "type": "multi_level",
+      "difficulty": "medium",
+      "logbook_goals": [14, 19],
+      "description": "CBD multi-level parking — good free-zone starter for ramps, ticketing, and tight turns.",
+      "supervisor_notes": "Enter and exit via marked ramps; practise mirror checks and slow speed on spiral levels.",
+      "centroid": { "lat": -33.8573, "lng": 151.2155 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8585,
+        "min_lng": 151.2140,
+        "max_lat": -33.8562,
+        "max_lng": 151.2172
+      }
+    },
+    {
+      "id": "east-village-zetland",
+      "rank": 2,
+      "name": "East Village Zetland",
+      "suburb": "Zetland",
+      "region_id": "inner_east",
+      "type": "shopping_centre",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Modern shopping-centre car park with marked bays and moderate pedestrian traffic.",
+      "supervisor_notes": "Practise finding a bay, slowing for pedestrians, and reversing out with head checks.",
+      "centroid": { "lat": -33.9075, "lng": 151.2095 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9090,
+        "min_lng": 151.2075,
+        "max_lat": -33.9060,
+        "max_lng": 151.2115
+      }
+    },
+    {
+      "id": "royal-randwick-shopping-centre",
+      "rank": 3,
+      "name": "Royal Randwick Shopping Centre",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "type": "shopping_centre",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Busy suburban shopping-centre parking with ramps and tight aisles.",
+      "supervisor_notes": "Good for angle parking practice; watch for cars reversing out of bays.",
+      "centroid": { "lat": -33.9145, "lng": 151.2415 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9160,
+        "min_lng": 151.2395,
+        "max_lat": -33.9130,
+        "max_lng": 151.2435
+      }
+    },
+    {
+      "id": "rose-bay-village-car-park",
+      "rank": 4,
+      "name": "Rose Bay Village Car Park",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "type": "surface",
+      "difficulty": "easy",
+      "logbook_goals": [14],
+      "description": "Smaller village-scale lot near shops and cafés — lower pressure than beach parking.",
+      "supervisor_notes": "Ideal early car-park badge; practise entering off a busy road and securing the car.",
+      "centroid": { "lat": -33.8745, "lng": 151.2710 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8755,
+        "min_lng": 151.2695,
+        "max_lat": -33.8735,
+        "max_lng": 151.2725
+      }
+    },
+    {
+      "id": "double-bay-civic-car-park",
+      "rank": 5,
+      "name": "Double Bay Civic Car Park",
+      "suburb": "Double Bay",
+      "region_id": "harbour",
+      "type": "surface",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Harbour-side civic parking with steady shopper traffic and narrow aisles.",
+      "supervisor_notes": "Watch for pedestrians crossing between parked cars; practise smooth low-speed steering.",
+      "centroid": { "lat": -33.8772, "lng": 151.2440 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8785,
+        "min_lng": 151.2425,
+        "max_lat": -33.8760,
+        "max_lng": 151.2455
+      }
+    },
+    {
+      "id": "westfield-bondi-junction",
+      "rank": 6,
+      "name": "Westfield Bondi Junction",
+      "suburb": "Bondi Junction",
+      "region_id": "inner_east",
+      "type": "multi_level",
+      "difficulty": "hard",
+      "logbook_goals": [14, 19],
+      "description": "Large multi-storey centre car park — ramps, levels, and heavy weekend traffic.",
+      "supervisor_notes": "Platinum-tier practice. Daylight first. Follow level signs; keep left on ramps.",
+      "centroid": { "lat": -33.8920, "lng": 151.2505 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8935,
+        "min_lng": 151.2485,
+        "max_lat": -33.8905,
+        "max_lng": 151.2525
+      }
+    },
+    {
+      "id": "bondi-beach-car-park",
+      "rank": 7,
+      "name": "Bondi Beach Car Park",
+      "suburb": "Bondi Beach",
+      "region_id": "coast",
+      "type": "beach",
+      "difficulty": "hard",
+      "logbook_goals": [14, 10],
+      "description": "High-traffic beach parking on Campbell Parade — tourists, buses, and tight turns.",
+      "supervisor_notes": "Avoid peak summer weekends for a first attempt; emphasise scanning and patience.",
+      "centroid": { "lat": -33.8914, "lng": 151.2767 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8928,
+        "min_lng": 151.2750,
+        "max_lat": -33.8900,
+        "max_lng": 151.2785
+      }
+    },
+    {
+      "id": "coogee-beach-car-park",
+      "rank": 8,
+      "name": "Coogee Beach Car Park",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "type": "beach",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Coastal beach lot near Brooke Street — steady pedestrian flow to the sand.",
+      "supervisor_notes": "Good mid-tier beach badge; practise reversing from a bay if space allows.",
+      "centroid": { "lat": -33.9205, "lng": 151.2555 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9220,
+        "min_lng": 151.2538,
+        "max_lat": -33.9190,
+        "max_lng": 151.2572
+      }
+    },
+    {
+      "id": "bronte-beach-car-park",
+      "rank": 9,
+      "name": "Bronte Beach Car Park",
+      "suburb": "Bronte",
+      "region_id": "coast",
+      "type": "beach",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Smaller beach car park at the base of the Bronte cliff road.",
+      "supervisor_notes": "Approach via narrow coastal roads; good paired practice with coastal driving.",
+      "centroid": { "lat": -33.9045, "lng": 151.2640 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9058,
+        "min_lng": 151.2625,
+        "max_lat": -33.9032,
+        "max_lng": 151.2655
+      }
+    },
+    {
+      "id": "maroubra-beach-car-park",
+      "rank": 10,
+      "name": "Maroubra Beach Car Park",
+      "suburb": "Maroubra",
+      "region_id": "coast",
+      "type": "beach",
+      "difficulty": "medium",
+      "logbook_goals": [14],
+      "description": "Southern coastal lot on Marine Parade — completes the Beach Pack collection.",
+      "supervisor_notes": "Often easier than Bondi; good capstone for coastal parking confidence.",
+      "centroid": { "lat": -33.9505, "lng": 151.2585 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9520,
+        "min_lng": 151.2568,
+        "max_lat": -33.9490,
+        "max_lng": 151.2602
+      }
+    }
+  ],
+  "honourable_mentions": [
+    {
+      "id": "prince-of-wales-hospital",
+      "name": "Prince of Wales Hospital Car Park",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "type": "hospital",
+      "note": "Multi-level hospital parking — busy, good for advanced practice."
+    },
+    {
+      "id": "centennial-park-queens-park",
+      "name": "Centennial Park Queens Park Entry",
+      "suburb": "Queens Park",
+      "region_id": "inner_east",
+      "type": "surface",
+      "note": "Park entry roads and lots — slower speeds, picnic traffic."
+    },
+    {
+      "id": "heffron-centre-maroubra",
+      "name": "Heffron Centre",
+      "suburb": "Maroubra",
+      "region_id": "coast",
+      "type": "surface",
+      "note": "Large community centre lot — wide bays, good for first angle parking."
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify on-site before production.",
+    "visit_vs_navigate": "Visit = GPS enters geofence. Navigate = remain inside ≥60s below 20 km/h with motion."
+  }
+}

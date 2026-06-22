@@ -1,0 +1,144 @@
+{
+  "collection_id": "coast_expedition",
+  "collection_name": "Coast Expedition",
+  "version": 1,
+  "description": "Epic single-trip unlocks along the full Eastern Suburbs coastal spine — from the northern tip at Watsons Bay to the southern tip at La Perouse. Day and night variants; complete both for the ultimate badge.",
+  "unlock_rules": {
+    "requires_single_trip": true,
+    "requires_both_endpoints": true,
+    "endpoint_order": "either",
+    "min_elapsed_minutes": 25,
+    "max_elapsed_hours": 4,
+    "supervisor_confirm_required": true,
+    "allow_pause_max_minutes": 15,
+    "notes": "Trip must not be ended between endpoints. Brief stops (fuel, toilet) OK if trip stays active."
+  },
+  "time_conditions": {
+    "day": {
+      "label": "Daylight",
+      "rule": "Both endpoint visits must occur between official sunrise and sunset (local NSW).",
+      "aligns_with_logbook": false
+    },
+    "night": {
+      "label": "Night",
+      "rule": "Both endpoint visits must occur between sunset and sunrise — same definition as NSW logbook night hours.",
+      "aligns_with_logbook": true,
+      "logbook_goal": 17
+    }
+  },
+  "achievement_tiers": [
+    {
+      "id": "coast_day",
+      "name": "Harbour to Botany (Day)",
+      "expedition_id": "watsons-bay-la-perouse-day"
+    },
+    {
+      "id": "coast_night",
+      "name": "Harbour to Botany (Night)",
+      "expedition_id": "watsons-bay-la-perouse-night"
+    },
+    {
+      "id": "coast_master",
+      "name": "Coast Commander",
+      "requires_expedition_ids": [
+        "watsons-bay-la-perouse-day",
+        "watsons-bay-la-perouse-night"
+      ]
+    }
+  ],
+  "endpoints": {
+    "watsons_bay": {
+      "id": "watsons-bay-extreme",
+      "name": "Watsons Bay — harbour tip",
+      "suburb": "Watsons Bay",
+      "region_id": "harbour",
+      "description": "Northern coastal extreme: Military Road terminus at Watsons Bay Wharf — the furthest drivable harbour-head point in the play area.",
+      "supervisor_notes": "Use the wharf / Military Road end, not a U-turn short of the tip. Ferry wharf and Robertson Park area count as arrival.",
+      "centroid": { "lat": -33.8432, "lng": 151.2818 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8445,
+        "min_lng": 151.2800,
+        "max_lat": -33.8418,
+        "max_lng": 151.2838
+      }
+    },
+    "la_perouse": {
+      "id": "la-perouse-extreme",
+      "name": "La Perouse — Botany Bay tip",
+      "suburb": "La Perouse",
+      "region_id": "botany_bay",
+      "description": "Southern coastal extreme: end of Anzac Parade at La Perouse Point, near Bare Island and the Botany Bay heads.",
+      "supervisor_notes": "Arrive at the La Perouse village loop / point carpark area — the furthest public driving point on the play-area coast.",
+      "centroid": { "lat": -33.9888, "lng": 151.2318 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9902,
+        "min_lng": 151.2300,
+        "max_lat": -33.9874,
+        "max_lng": 151.2340
+      }
+    }
+  },
+  "expeditions": [
+    {
+      "id": "watsons-bay-la-perouse-day",
+      "name": "Watsons Bay → La Perouse (Day)",
+      "time_condition": "day",
+      "difficulty": "hard",
+      "distance_km_approx": 28,
+      "duration_minutes_typical": "50–75",
+      "description": "One continuous daylight drive touching both coastal extremes. Classic Eastern Suburbs learner expedition.",
+      "supervisor_notes": "Plan a clear route via New South Head Road and the coastal corridor. Avoid peak school traffic for the first attempt. All crossed zones must be unlocked for fog tracking.",
+      "suggested_route_hint": "Watsons Bay → Rose Bay → Double Bay → Bondi → Coogee → Maroubra → La Perouse (or reverse).",
+      "regions_likely_traversed": [
+        "harbour",
+        "inner_east",
+        "coast",
+        "botany_bay"
+      ],
+      "endpoint_ids": ["watsons-bay-extreme", "la-perouse-extreme"]
+    },
+    {
+      "id": "watsons-bay-la-perouse-night",
+      "name": "Watsons Bay → La Perouse (Night)",
+      "time_condition": "night",
+      "difficulty": "expert",
+      "distance_km_approx": 28,
+      "duration_minutes_typical": "50–75",
+      "description": "The same coast-to-coast run between sunset and sunrise — counts toward night-driving confidence and logbook Goal 17 practice.",
+      "supervisor_notes": "Only after the day expedition is comfortable. Supervisor stays alert; learner must not touch the phone. Headlights and speed discipline essential.",
+      "suggested_route_hint": "Same corridor as the day run; start after sunset with a full tank and rested supervisor.",
+      "regions_likely_traversed": [
+        "harbour",
+        "inner_east",
+        "coast",
+        "botany_bay"
+      ],
+      "endpoint_ids": ["watsons-bay-extreme", "la-perouse-extreme"],
+      "logbook_goals": [17]
+    }
+  ],
+  "validation_logic": {
+    "summary": "Start or resume a trip → enter endpoint A geofence → remain in one trip → enter endpoint B geofence → supervisor confirms.",
+    "checks": [
+      "same_trip_id_for_both_endpoints",
+      "elapsed_time_between_first_and_second_endpoint_gte_min_elapsed_minutes",
+      "elapsed_time_lte_max_elapsed_hours",
+      "time_condition_satisfied_at_both_endpoints",
+      "both_endpoints_inside_play_area"
+    ],
+    "failure_reasons": {
+      "trip_ended_early": "Trip ended before reaching the second endpoint.",
+      "too_fast": "Endpoints reached too quickly — likely not a real coast drive.",
+      "wrong_time_of_day": "One or both endpoints outside the required day/night window.",
+      "locked_zone_only": "Route valid but fog tracking skipped in unpurchased zones."
+    }
+  },
+  "_meta": {
+    "coordinate_note": "Endpoint boxes are approximate for v1. Verify at Watsons Bay Wharf and La Perouse Point carpark.",
+    "watsons_bay_note": "South Head / Hornby Lighthouse is nearby but mostly walk-in; the wharf terminus is the standard drivable extreme.",
+    "la_perouse_note": "Cape Banks tracks further south are largely walking tracks — Anzac Parade end is the drivable extreme.",
+    "monetisation_note": "Expedition can complete as an achievement even if some zones are locked; map fog only clears in owned regions."
+  }
+}

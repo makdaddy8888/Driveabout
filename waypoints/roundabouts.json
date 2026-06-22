@@ -1,0 +1,273 @@
+{
+  "collection_id": "roundabout_ranger",
+  "collection_name": "Roundabout Ranger",
+  "version": 1,
+  "description": "Stamp ten Eastern Suburbs roundabouts — from quiet single-lane circles to busier multi-lane examples. Supervisor confirms the first clean passage through each.",
+  "unlock_rules": {
+    "max_speed_kmh": 40,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 10,
+    "requires_complete_passage": true,
+    "repeat_visits_increase_familiarity": true
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "First Circle", "roundabouts_required": 3 },
+    { "id": "silver", "name": "Give Way Pro", "roundabouts_required": 6 },
+    { "id": "gold", "name": "Roundabout Ranger", "roundabouts_required": 10 }
+  ],
+  "combo_badges": [
+    {
+      "id": "park_circles",
+      "name": "Park Circles",
+      "roundabout_ids": [
+        "grand-drive-centennial-park",
+        "grand-drive-federation-way"
+      ]
+    },
+    {
+      "id": "harbour_roundabouts",
+      "name": "Harbour Roundabouts",
+      "roundabout_ids": [
+        "knox-st-double-bay",
+        "new-south-head-rose-bay"
+      ]
+    },
+    {
+      "id": "coastal_roundabouts",
+      "name": "Coastal Roundabouts",
+      "roundabout_ids": [
+        "carrington-rd-coogee",
+        "maroubra-roundabout"
+      ]
+    },
+    {
+      "id": "night_circle",
+      "name": "Night Circle",
+      "note": "Complete any roundabout stamp between sunset and sunrise.",
+      "requires_night": true
+    }
+  ],
+  "roundabouts": [
+    {
+      "id": "grand-drive-centennial-park",
+      "rank": 1,
+      "name": "Grand Drive (Centennial Park)",
+      "suburb": "Centennial Park",
+      "region_id": "inner_east",
+      "type": "single_lane",
+      "difficulty": "easy",
+      "logbook_goals": [12],
+      "description": "Low-speed park roundabout — ideal first stamp for give-way and lane position.",
+      "supervisor_notes": "Use park hours; pedestrians and cyclists common. Practise indicating on exit.",
+      "centroid": { "lat": -33.8975, "lng": 151.2480 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8988,
+        "min_lng": 151.2465,
+        "max_lat": -33.8962,
+        "max_lng": 151.2495
+      }
+    },
+    {
+      "id": "grand-drive-federation-way",
+      "rank": 2,
+      "name": "Grand Drive / Federation Way",
+      "suburb": "Centennial Park",
+      "region_id": "inner_east",
+      "type": "single_lane",
+      "difficulty": "easy",
+      "logbook_goals": [12],
+      "description": "Second park circle for repeat practice without CBD traffic pressure.",
+      "supervisor_notes": "Pair with rank 1 in one park session; focus on smooth entry speed.",
+      "centroid": { "lat": -33.9010, "lng": 151.2520 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9022,
+        "min_lng": 151.2505,
+        "max_lat": -33.8998,
+        "max_lng": 151.2535
+      }
+    },
+    {
+      "id": "frenchmans-rd-randwick",
+      "rank": 3,
+      "name": "Frenchmans Road",
+      "suburb": "Randwick",
+      "region_id": "inner_east",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Suburban single-lane roundabout on a common learner route.",
+      "supervisor_notes": "Watch for buses and school traffic; head checks before entering.",
+      "centroid": { "lat": -33.9115, "lng": 151.2385 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9128,
+        "min_lng": 151.2370,
+        "max_lat": -33.9102,
+        "max_lng": 151.2400
+      }
+    },
+    {
+      "id": "york-rd-queens-park",
+      "rank": 4,
+      "name": "York Road",
+      "suburb": "Queens Park",
+      "region_id": "inner_east",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Connector roundabout between eastern suburbs and Bondi Junction approaches.",
+      "supervisor_notes": "Good step up from park circles; moderate traffic at peak times.",
+      "centroid": { "lat": -33.8895, "lng": 151.2465 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8908,
+        "min_lng": 151.2450,
+        "max_lat": -33.8882,
+        "max_lng": 151.2480
+      }
+    },
+    {
+      "id": "bondi-junction-oxford-st",
+      "rank": 5,
+      "name": "Bondi Junction (Oxford Street)",
+      "suburb": "Bondi Junction",
+      "region_id": "inner_east",
+      "type": "multi_lane",
+      "difficulty": "hard",
+      "logbook_goals": [12, 19],
+      "description": "Busy multi-lane roundabout near Westfield — capstone urban complexity.",
+      "supervisor_notes": "Only after several easier stamps. Off-peak first; lane choice before entry.",
+      "centroid": { "lat": -33.8925, "lng": 151.2495 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8940,
+        "min_lng": 151.2478,
+        "max_lat": -33.8910,
+        "max_lng": 151.2512
+      }
+    },
+    {
+      "id": "knox-st-double-bay",
+      "rank": 6,
+      "name": "Knox Street",
+      "suburb": "Double Bay",
+      "region_id": "harbour",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Harbour-side village roundabout with shoppers and tight kerbs.",
+      "supervisor_notes": "Expect pedestrians near crossings; keep exit signalling clear.",
+      "centroid": { "lat": -33.8765, "lng": 151.2425 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8778,
+        "min_lng": 151.2410,
+        "max_lat": -33.8752,
+        "max_lng": 151.2440
+      }
+    },
+    {
+      "id": "new-south-head-rose-bay",
+      "rank": 7,
+      "name": "New South Head Road",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Main-road roundabout on a common Rose Bay corridor.",
+      "supervisor_notes": "Heavier flow than Double Bay; practise gap selection on entry.",
+      "centroid": { "lat": -33.8710, "lng": 151.2690 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8723,
+        "min_lng": 151.2675,
+        "max_lat": -33.8697,
+        "max_lng": 151.2705
+      }
+    },
+    {
+      "id": "carrington-rd-coogee",
+      "rank": 8,
+      "name": "Carrington Road",
+      "suburb": "Coogee",
+      "region_id": "coast",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Coastal suburb roundabout linking beach-bound traffic.",
+      "supervisor_notes": "Combine with Coogee car park or Arden St hill in one coastal lesson.",
+      "centroid": { "lat": -33.9195, "lng": 151.2570 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9208,
+        "min_lng": 151.2555,
+        "max_lat": -33.9182,
+        "max_lng": 151.2585
+      }
+    },
+    {
+      "id": "maroubra-roundabout",
+      "rank": 9,
+      "name": "Anzac Parade / Maroubra",
+      "suburb": "Maroubra",
+      "region_id": "coast",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12],
+      "description": "Southern coastal roundabout for the Coastal Roundabouts combo.",
+      "supervisor_notes": "Busier than Coogee; good late-tier stamp before Bondi Junction.",
+      "centroid": { "lat": -33.9480, "lng": 151.2395 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.9493,
+        "min_lng": 151.2380,
+        "max_lat": -33.9467,
+        "max_lng": 151.2410
+      }
+    },
+    {
+      "id": "woolloomooloo-william-st",
+      "rank": 10,
+      "name": "William Street (Woolloomooloo)",
+      "suburb": "Woolloomooloo",
+      "region_id": "city",
+      "type": "single_lane",
+      "difficulty": "medium",
+      "logbook_goals": [12, 19],
+      "description": "Free-zone city roundabout — links harbour approaches to CBD practice.",
+      "supervisor_notes": "Use for city + roundabout combo in the free zone; watch buses and taxis.",
+      "centroid": { "lat": -33.8695, "lng": 151.2220 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8708,
+        "min_lng": 151.2205,
+        "max_lat": -33.8682,
+        "max_lng": 151.2235
+      }
+    }
+  ],
+  "honourable_mentions": [
+    {
+      "id": "moore-park-road-paddington",
+      "name": "Moore Park Road",
+      "suburb": "Paddington",
+      "region_id": "inner_east",
+      "note": "Busy inner-east option for a future Paddington pack."
+    },
+    {
+      "id": "syd-einfeld-drive",
+      "name": "Syd Einfeld Drive",
+      "suburb": "Bondi Junction",
+      "region_id": "inner_east",
+      "type": "multi_lane",
+      "note": "Alternative hard stamp paired with rank 5."
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify on-site before production.",
+    "passage_note": "Complete passage = GPS track enters and exits the geofence via the roundabout circuit."
+  }
+}
