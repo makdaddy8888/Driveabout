@@ -10,7 +10,9 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
-from typing import Dict, Optional, Tuple
+from typing import Dict, FrozenSet, Optional, Tuple
+
+from regions import DEFAULT_UNLOCKED, can_track, region_for
 
 # --- Config (match DESIGN.md) ---
 
@@ -77,7 +79,11 @@ class VisitStore:
         accuracy_m: float = 10.0,
         speed_mps: float = 10.0,
         cell_size_m: int = CELL_SIZE_M,
+        unlocked_regions: FrozenSet[str] = DEFAULT_UNLOCKED,
     ) -> Optional[CellVisit]:
+        allowed, _reason = can_track(lat, lng, unlocked_regions)
+        if not allowed:
+            return None
         if accuracy_m > MIN_ACCURACY_M:
             return None
         if speed_mps < MIN_SPEED_MPS:
@@ -155,15 +161,19 @@ def _demo() -> None:
         (base_lat + 0.0016, base_lng),
     ]
 
-    print("Drive simulation (Sydney)\n" + "-" * 40)
+    print("Drive simulation (Sydney City — free zone)\n" + "-" * 40)
     for i, (lat, lng) in enumerate(points):
         visit = store.process_sample(
             lat, lng, t0 + timedelta(seconds=i * 30), speed_mps=8.0
         )
         cid = cell_id_for(lat, lng)
+        region = region_for(lat, lng)
         if visit:
             op = fog_opacity(store.cells.get(cid))
-            print(f"  sample {i}: cell {cid} visits={visit.visit_count} fog={op}")
+            print(
+                f"  sample {i}: [{region.id if region else '?'}] "
+                f"cell {cid} visits={visit.visit_count} fog={op}"
+            )
 
     print("\nSecond drive (next day)\n" + "-" * 40)
     t1 = t0 + timedelta(days=1)
@@ -180,6 +190,16 @@ def _demo() -> None:
     explored = len(store.cells)
     well_known = sum(1 for v in store.cells.values() if v.visit_count >= 5)
     print(f"\nStats: {explored} cells explored, {well_known} well known")
+
+    # Locked zone: Bondi — no visits without purchase
+    bondi_lat, bondi_lng = -33.8915, 151.2767
+    locked = store.process_sample(
+        bondi_lat, bondi_lng, t0, speed_mps=8.0, unlocked_regions=DEFAULT_UNLOCKED
+    )
+    print(
+        f"\nBondi sample (coast locked): "
+        f"{'recorded' if locked else 'skipped — unlock Coastal to track'}"
+    )
 
 
 if __name__ == "__main__":

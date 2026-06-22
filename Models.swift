@@ -33,6 +33,93 @@ struct MapBounds: Codable {
     let minLng: Double
     let maxLat: Double
     let maxLng: Double
+
+    func contains(lat: Double, lng: Double) -> Bool {
+        minLat <= lat && lat <= maxLat && minLng <= lng && lng <= maxLng
+    }
+}
+
+// MARK: - Eastern Suburbs play area
+
+enum EasternSuburbs {
+    /// Watsons Bay → La Perouse, west to City of Sydney
+    static let envelope = MapBounds(
+        minLat: -33.995,
+        minLng: 151.198,
+        maxLat: -33.835,
+        maxLng: 151.292
+    )
+}
+
+struct PlayRegion: Identifiable, Codable {
+    let id: String
+    let name: String
+    let bounds: MapBounds
+    let free: Bool
+    let productID: String?
+
+    static let all: [PlayRegion] = [
+        PlayRegion(
+            id: "city",
+            name: "Sydney City",
+            bounds: MapBounds(minLat: -33.882, minLng: 151.198, maxLat: -33.858, maxLng: 151.228),
+            free: true,
+            productID: nil
+        ),
+        PlayRegion(
+            id: "harbour",
+            name: "Harbour & Watsons Bay",
+            bounds: MapBounds(minLat: -33.858, minLng: 151.220, maxLat: -33.835, maxLng: 151.292),
+            free: false,
+            productID: "au.driveabout.region.harbour"
+        ),
+        PlayRegion(
+            id: "inner_east",
+            name: "Inner East",
+            bounds: MapBounds(minLat: -33.920, minLng: 151.198, maxLat: -33.858, maxLng: 151.255),
+            free: false,
+            productID: "au.driveabout.region.inner_east"
+        ),
+        PlayRegion(
+            id: "coast",
+            name: "Coastal",
+            bounds: MapBounds(minLat: -33.975, minLng: 151.230, maxLat: -33.885, maxLng: 151.278),
+            free: false,
+            productID: "au.driveabout.region.coast"
+        ),
+        PlayRegion(
+            id: "botany_bay",
+            name: "La Perouse & Botany Bay",
+            bounds: MapBounds(minLat: -33.995, minLng: 151.198, maxLat: -33.965, maxLng: 151.255),
+            free: false,
+            productID: "au.driveabout.region.botany_bay"
+        ),
+    ]
+
+    static func region(for lat: Double, lng: Double) -> PlayRegion? {
+        guard EasternSuburbs.envelope.contains(lat: lat, lng: lng) else { return nil }
+        for region in all where region.bounds.contains(lat: lat, lng: lng) {
+            return region
+        }
+        return nil
+    }
+}
+
+struct UnlockedRegions: Codable {
+    var regionIDs: Set<String>
+
+    static var `default`: UnlockedRegions {
+        UnlockedRegions(regionIDs: Set(PlayRegion.all.filter(\.free).map(\.id)))
+    }
+
+    func isUnlocked(_ regionID: String) -> Bool {
+        PlayRegion.all.first { $0.id == regionID }?.free == true || regionIDs.contains(regionID)
+    }
+
+    func canTrack(lat: Double, lng: Double) -> Bool {
+        guard let region = PlayRegion.region(for: lat, lng: lng) else { return false }
+        return isUnlocked(region.id)
+    }
 }
 
 struct CellVisit: Identifiable, Codable {

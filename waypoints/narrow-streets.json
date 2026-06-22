@@ -1,0 +1,278 @@
+{
+  "collection_id": "narrow_street_navigator",
+  "collection_name": "Narrow Street Navigator",
+  "version": 1,
+  "description": "Collect badges by navigating Sydney's tightest learner-friendly streets. Supervisor confirms each first completion.",
+  "unlock_rules": {
+    "max_speed_kmh": 30,
+    "supervisor_confirm_required": true,
+    "min_time_in_geofence_seconds": 20,
+    "repeat_visits_increase_familiarity": true
+  },
+  "achievement_tiers": [
+    { "id": "bronze", "name": "Tight Squeeze", "streets_required": 3 },
+    { "id": "silver", "name": "Lane Whisperer", "streets_required": 6 },
+    { "id": "gold", "name": "Narrow Street Navigator", "streets_required": 10 }
+  ],
+  "combo_badges": [
+    {
+      "id": "paddington_pack",
+      "name": "Paddington Pack",
+      "street_ids": ["shadforth-street-paddington", "gipps-street-paddington", "william-street-paddington"]
+    },
+    {
+      "id": "rose-bay-squeeze",
+      "name": "Rose Bay Squeeze",
+      "street_ids": ["chaleyer-street-rose-bay", "norwich-lane-rose-bay"]
+    },
+    {
+      "id": "rocks-run",
+      "name": "Rocks Run",
+      "street_ids": ["atherden-street-the-rocks"]
+    },
+    {
+      "id": "boss-mode",
+      "name": "Boss Mode",
+      "street_ids": ["argyle-lane-millers-point"],
+      "requires_supervisor_acknowledgement": "expert_narrow_street"
+    }
+  ],
+  "pedestrian_only_nearby": [
+    {
+      "name": "Suez Canal",
+      "suburb": "The Rocks",
+      "note": "Pedestrian laneway only — do not drive."
+    },
+    {
+      "name": "McElhone Place (Cat Alley)",
+      "suburb": "Surry Hills",
+      "note": "Closed to through traffic — walk only."
+    }
+  ],
+  "streets": [
+    {
+      "id": "chaleyer-street-rose-bay",
+      "rank": 1,
+      "name": "Chaleyer Street",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Tight residential street with parked cars both sides.",
+      "supervisor_notes": "Practise giving way to oncoming traffic; use mirrors and slow speed.",
+      "centroid": { "lat": -33.875, "lng": 151.273 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8768,
+        "min_lng": 151.2695,
+        "max_lat": -33.8732,
+        "max_lng": 151.2775
+      }
+    },
+    {
+      "id": "shadforth-street-paddington",
+      "rank": 2,
+      "name": "Shadforth Street",
+      "suburb": "Paddington",
+      "region_id": "inner_east",
+      "difficulty": "hard",
+      "logbook_goals": [8, 10],
+      "description": "Heritage terrace street that often feels like a single-lane two-way corridor.",
+      "supervisor_notes": "Avoid peak hour first time. Sharp turn from Oxford Street needs extra care.",
+      "centroid": { "lat": -33.8842, "lng": 151.2268 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8855,
+        "min_lng": 151.2255,
+        "max_lat": -33.8828,
+        "max_lng": 151.2282
+      }
+    },
+    {
+      "id": "gipps-street-paddington",
+      "rank": 3,
+      "name": "Gipps Street",
+      "suburb": "Paddington",
+      "region_id": "inner_east",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Narrow Paddington terrace street near Victoria Barracks.",
+      "supervisor_notes": "Watch for pedestrians and door openings from parked cars.",
+      "centroid": { "lat": -33.8836, "lng": 151.2285 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8848,
+        "min_lng": 151.2272,
+        "max_lat": -33.8824,
+        "max_lng": 151.2300
+      }
+    },
+    {
+      "id": "william-street-paddington",
+      "rank": 4,
+      "name": "William Street",
+      "suburb": "Paddington",
+      "region_id": "inner_east",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Narrow inner-east connector with shops and terraces near Oxford Street.",
+      "supervisor_notes": "High pedestrian activity; practise scanning and low-speed positioning.",
+      "centroid": { "lat": -33.8839, "lng": 151.2238 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8850,
+        "min_lng": 151.2220,
+        "max_lat": -33.8828,
+        "max_lng": 151.2258
+      }
+    },
+    {
+      "id": "atherden-street-the-rocks",
+      "rank": 5,
+      "name": "Atherden Street",
+      "suburb": "The Rocks",
+      "region_id": "city",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Sydney's shortest street (~28 m) — intimate heritage terrace enclosure.",
+      "supervisor_notes": "Short segment; good for controlled slow approach and tight positioning.",
+      "centroid": { "lat": -33.8595, "lng": 151.2083 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8600,
+        "min_lng": 151.2078,
+        "max_lat": -33.8590,
+        "max_lng": 151.2088
+      }
+    },
+    {
+      "id": "carlotta-road-double-bay",
+      "rank": 6,
+      "name": "Carlotta Road",
+      "suburb": "Double Bay",
+      "region_id": "harbour",
+      "difficulty": "hard",
+      "logbook_goals": [8, 10],
+      "description": "Residential rat-run with tight parking and limited visibility from driveways.",
+      "supervisor_notes": "Check blind spots when cars are tightly parked; expect oncoming traffic.",
+      "centroid": { "lat": -33.8768, "lng": 151.2415 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8782,
+        "min_lng": 151.2398,
+        "max_lat": -33.8754,
+        "max_lng": 151.2432
+      }
+    },
+    {
+      "id": "william-street-double-bay",
+      "rank": 7,
+      "name": "William Street",
+      "suburb": "Double Bay",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Village-scale street connecting Double Bay's busy core.",
+      "supervisor_notes": "Awkward junction near Beach Street — practise gap selection.",
+      "centroid": { "lat": -33.8778, "lng": 151.2432 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8790,
+        "min_lng": 151.2418,
+        "max_lat": -33.8766,
+        "max_lng": 151.2448
+      }
+    },
+    {
+      "id": "norwich-lane-rose-bay",
+      "rank": 8,
+      "name": "Norwich Lane",
+      "suburb": "Rose Bay",
+      "region_id": "harbour",
+      "difficulty": "medium",
+      "logbook_goals": [8, 10],
+      "description": "Genuine lane width typical of Rose Bay back streets.",
+      "supervisor_notes": "Good paired practice with Chaleyer Street for the Rose Bay Squeeze badge.",
+      "centroid": { "lat": -33.8705, "lng": 151.2678 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8715,
+        "min_lng": 151.2665,
+        "max_lat": -33.8695,
+        "max_lng": 151.2692
+      }
+    },
+    {
+      "id": "drumalbyn-road-bellevue-hill",
+      "rank": 9,
+      "name": "Drumalbyn Road",
+      "suburb": "Bellevue Hill",
+      "region_id": "harbour",
+      "difficulty": "hard",
+      "logbook_goals": [8, 10],
+      "description": "Pinch point near parked cars — real give-way and creep-forward practice.",
+      "supervisor_notes": "Use the western side near nos. 87–89 where the road narrows.",
+      "centroid": { "lat": -33.8862, "lng": 151.2558 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8872,
+        "min_lng": 151.2545,
+        "max_lat": -33.8852,
+        "max_lng": 151.2572
+      }
+    },
+    {
+      "id": "argyle-lane-millers-point",
+      "rank": 10,
+      "name": "Argyle Lane",
+      "suburb": "Millers Point",
+      "region_id": "city",
+      "difficulty": "expert",
+      "logbook_goals": [8, 10],
+      "description": "One of Sydney's narrowest driveable streets (~2.4 m kerb to kerb). Boss-level unlock.",
+      "supervisor_notes": "Daylight only. Small car recommended. Skip if uncomfortable — this is optional expert tier.",
+      "centroid": { "lat": -33.8582, "lng": 151.2028 },
+      "geofence": {
+        "type": "bbox",
+        "min_lat": -33.8588,
+        "min_lng": 151.2022,
+        "max_lat": -33.8576,
+        "max_lng": 151.2036
+      }
+    }
+  ],
+  "honourable_mentions": [
+    {
+      "id": "liverpool-street-paddington",
+      "name": "Liverpool Street",
+      "suburb": "Paddington",
+      "region_id": "inner_east",
+      "note": "Pairs with Shadforth; same congestion character."
+    },
+    {
+      "id": "lance-lane-millers-point",
+      "name": "Lance Lane",
+      "suburb": "Millers Point",
+      "region_id": "city",
+      "note": "Twin of Argyle Lane (2.4 m) — optional expert bonus."
+    },
+    {
+      "id": "military-road-watsons-bay",
+      "name": "Military Road",
+      "suburb": "Watsons Bay",
+      "region_id": "harbour",
+      "note": "Village centre; tourists and tight kerbs near the wharf."
+    },
+    {
+      "id": "hopetoun-avenue-vaucluse",
+      "name": "Hopetoun Avenue",
+      "suburb": "Vaucluse",
+      "region_id": "harbour",
+      "note": "Narrow and steep — combine with Hill Start Hero collection."
+    }
+  ],
+  "_meta": {
+    "coordinate_note": "Bounding boxes are approximate for v1. Verify on-site before production.",
+    "name_correction": "Chaleyer Street (Rose Bay) is often misheard as Charlie Street."
+  }
+}
