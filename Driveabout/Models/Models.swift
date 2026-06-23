@@ -1,5 +1,3 @@
-// Driveabout — iOS data models (reference for SwiftUI app)
-
 import Foundation
 
 // MARK: - Grid
@@ -49,6 +47,13 @@ enum EasternSuburbs {
         maxLat: -33.835,
         maxLng: 151.292
     )
+
+    static var mapCenter: (lat: Double, lng: Double) {
+        (
+            (envelope.minLat + envelope.maxLat) / 2,
+            (envelope.minLng + envelope.maxLng) / 2
+        )
+    }
 }
 
 struct PlayRegion: Identifiable, Codable {
@@ -131,6 +136,8 @@ struct CellVisit: Identifiable, Codable {
     var visitCount: Int
     var centroidLat: Double
     var centroidLng: Double
+
+    var fogLevel: FogLevel { FogLevel(visitCount: visitCount) }
 }
 
 struct Trip: Identifiable, Codable {
@@ -140,6 +147,8 @@ struct Trip: Identifiable, Codable {
     var endedAt: Date?
     var newCells: Int
     var repeatCells: Int
+
+    var isActive: Bool { endedAt == nil }
 }
 
 struct GpsSample: Codable {
@@ -155,9 +164,9 @@ struct GpsSample: Codable {
 
 enum FogLevel {
     case unexplored
-    case discovered   // visitCount == 1
-    case familiar     // 2...4
-    case wellKnown    // >= 5
+    case discovered
+    case familiar
+    case wellKnown
 
     init(visitCount: Int) {
         switch visitCount {
@@ -176,29 +185,5 @@ enum FogLevel {
         case .familiar: return 0.15
         case .wellKnown: return 0.0
         }
-    }
-}
-
-// MARK: - Visit processing
-
-struct VisitProcessor {
-    let profileID: UUID
-    let cellSizeM: Int
-    private var lastCellID: String?
-
-    mutating func process(
-        lat: Double,
-        lng: Double,
-        at recordedAt: Date,
-        accuracyM: Double,
-        speedMps: Double
-    ) -> CellVisit? {
-        guard accuracyM <= Grid.minAccuracyM else { return nil }
-        guard speedMps >= Grid.minSpeedMps else { return nil }
-
-        let cid = Grid.cellID(lat: lat, lng: lng, cellSizeM: cellSizeM)
-        _ = (cid, recordedAt, lastCellID)
-        lastCellID = cid
-        return nil // Wire to VisitStore in app layer
     }
 }

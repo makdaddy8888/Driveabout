@@ -78,12 +78,16 @@ GPS while driving  →  grid cells visited  →  fog lifts on the map
 | [`DESIGN.md`](DESIGN.md) | Data model, GPS rules, fog-of-war, zones, security |
 | [`regions.py`](regions.py) | Eastern Suburbs bounds, paid/free zone gates |
 | [`grid.py`](grid.py) | Reference logic — grid cells, visits, fog opacity |
-| [`Models.swift`](Models.swift) | iOS data models (SwiftUI / MapKit) |
+| [`Models.swift`](Driveabout/Models/Models.swift) | iOS data models (SwiftUI / MapKit) |
+| [`Driveabout.xcodeproj`](Driveabout.xcodeproj) | Xcode project — SwiftUI app scaffold |
+| [`IOS.md`](IOS.md) | Open, sign, and run on iPhone |
 | [`waypoints/`](waypoints/) | Curated achievement locations with geofences |
 
 ---
 
 ## Quick start
+
+**Python reference (map zones demo):**
 
 ```bash
 git clone https://github.com/makdaddy8888/Driveabout.git
@@ -92,6 +96,14 @@ python3 grid.py
 ```
 
 The demo simulates drives in the free City zone and shows locked-zone behaviour at Bondi.
+
+**iOS app (Xcode on Mac):**
+
+```bash
+open Driveabout.xcodeproj
+```
+
+See [`IOS.md`](IOS.md) for signing, device setup, and first run.
 
 ---
 
@@ -106,7 +118,7 @@ The demo simulates drives in the free City zone and shows locked-zone behaviour 
 
 ## Status
 
-Early design phase — architecture, reference Python, waypoint data. **No App Store build yet.**
+Early design phase — architecture, reference Python, waypoint data, **iOS v0.1 scaffold** (map + trip tracking shell; no App Store build yet).
 
 Contributions and feedback welcome. Eastern Suburbs parents and driving instructors especially.
 

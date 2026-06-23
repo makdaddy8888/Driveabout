@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0000010000000000000001 /* DriveaboutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000001 /* DriveaboutApp.swift */; };
+		BF0000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000002 /* ContentView.swift */; };
+		BF0000010000000000000003 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000003 /* Models.swift */; };
+		BF0000010000000000000004 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000004 /* LocationManager.swift */; };
+		BF0000010000000000000005 /* VisitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000005 /* VisitStore.swift */; };
+		BF0000010000000000000006 /* AchievementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000006 /* AchievementStore.swift */; };
+		BF000001000000000000000D /* WaypointModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000D /* WaypointModels.swift */; };
+		BF000001000000000000000E /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000E /* CollectionDetailView.swift */; };
+		BF0000010000000000000007 /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000007 /* MapScreenView.swift */; };
+		BF0000010000000000000008 /* TripHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000008 /* TripHUDView.swift */; };
+		BF0000010000000000000009 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000009 /* AchievementsView.swift */; };
+		BF000001000000000000000A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000A /* ProfileView.swift */; };
+		BF000001000000000000000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000B /* Assets.xcassets */; };
+		BF000001000000000000000C /* waypoints in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000C /* waypoints */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FR0000010000000000000001 /* DriveaboutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveaboutApp.swift; sourceTree = "<group>"; };
+		FR0000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000003 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FR0000010000000000000004 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FR0000010000000000000005 /* VisitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitStore.swift; sourceTree = "<group>"; };
+		FR0000010000000000000006 /* AchievementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementStore.swift; sourceTree = "<group>"; };
+		FR000001000000000000000D /* WaypointModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointModels.swift; sourceTree = "<group>"; };
+		FR000001000000000000000E /* CollectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000007 /* MapScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000008 /* TripHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHUDView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000009 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FR000001000000000000000B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FR000001000000000000000C /* waypoints */ = {isa = PBXFileReference; lastKnownFileType = folder; path = waypoints; sourceTree = "<group>"; };
+		FR00000100000000000000D0 /* Driveabout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveabout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FP0000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GR0000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				GR0000010000000000000002 /* Driveabout */,
+				FR000001000000000000000C /* waypoints */,
+				GR0000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000002 /* Driveabout */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000001 /* DriveaboutApp.swift */,
+				FR0000010000000000000002 /* ContentView.swift */,
+				GR0000010000000000000004 /* Models */,
+				GR0000010000000000000005 /* Services */,
+				GR0000010000000000000006 /* Views */,
+				FR000001000000000000000B /* Assets.xcassets */,
+			);
+			path = Driveabout;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR00000100000000000000D0 /* Driveabout.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000003 /* Models.swift */,
+				FR000001000000000000000D /* WaypointModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000004 /* LocationManager.swift */,
+				FR0000010000000000000005 /* VisitStore.swift */,
+				FR0000010000000000000006 /* AchievementStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GR0000010000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FR0000010000000000000007 /* MapScreenView.swift */,
+				FR0000010000000000000008 /* TripHUDView.swift */,
+				FR0000010000000000000009 /* AchievementsView.swift */,
+				FR000001000000000000000A /* ProfileView.swift */,
+				FR000001000000000000000E /* CollectionDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		NT0000010000000000000001 /* Driveabout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL0000010000000000000002 /* Build configuration list for PBXNativeTarget "Driveabout" */;
+			buildPhases = (
+				BP0000010000000000000001 /* Sources */,
+				FP0000010000000000000001 /* Frameworks */,
+				BP0000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Driveabout;
+			productName = Driveabout;
+			productReference = FR00000100000000000000D0 /* Driveabout.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PR0000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					NT0000010000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = CL0000010000000000000001 /* Build configuration list for PBXProject "Driveabout" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = GR0000010000000000000001;
+			productRefGroup = GR0000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				NT0000010000000000000001 /* Driveabout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BP0000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF000001000000000000000B /* Assets.xcassets in Resources */,
+				BF000001000000000000000C /* waypoints in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BP0000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0000010000000000000001 /* DriveaboutApp.swift in Sources */,
+				BF0000010000000000000002 /* ContentView.swift in Sources */,
+				BF0000010000000000000003 /* Models.swift in Sources */,
+				BF0000010000000000000004 /* LocationManager.swift in Sources */,
+				BF0000010000000000000005 /* VisitStore.swift in Sources */,
+				BF0000010000000000000006 /* AchievementStore.swift in Sources */,
+				BF000001000000000000000D /* WaypointModels.swift in Sources */,
+				BF000001000000000000000E /* CollectionDetailView.swift in Sources */,
+				BF0000010000000000000007 /* MapScreenView.swift in Sources */,
+				BF0000010000000000000008 /* TripHUDView.swift in Sources */,
+				BF0000010000000000000009 /* AchievementsView.swift in Sources */,
+				BF000001000000000000000A /* ProfileView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BC0000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC0000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC0000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Driveabout;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driveabout uses your location while a trip is active to reveal the map and record practice drives in the Eastern Suburbs.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.driveabout.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC0000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Driveabout;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driveabout uses your location while a trip is active to reveal the map and record practice drives in the Eastern Suburbs.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = au.driveabout.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL0000010000000000000001 /* Build configuration list for PBXProject "Driveabout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000001 /* Debug */,
+				BC0000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL0000010000000000000002 /* Build configuration list for PBXNativeTarget "Driveabout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC0000010000000000000003 /* Debug */,
+				BC0000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PR0000010000000000000001 /* Project object */;
+}
