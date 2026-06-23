@@ -13,15 +13,22 @@
 		BF0000010000000000000004 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000004 /* LocationManager.swift */; };
 		BF0000010000000000000005 /* VisitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000005 /* VisitStore.swift */; };
 		BF0000010000000000000006 /* AchievementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000006 /* AchievementStore.swift */; };
-		BF000001000000000000000D /* WaypointModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000D /* WaypointModels.swift */; };
-		BF000001000000000000000E /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000E /* CollectionDetailView.swift */; };
 		BF0000010000000000000007 /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000007 /* MapScreenView.swift */; };
 		BF0000010000000000000008 /* TripHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000008 /* TripHUDView.swift */; };
 		BF0000010000000000000009 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000009 /* AchievementsView.swift */; };
 		BF000001000000000000000A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000A /* ProfileView.swift */; };
 		BF000001000000000000000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000B /* Assets.xcassets */; };
 		BF000001000000000000000C /* waypoints in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000C /* waypoints */; };
+		BF000001000000000000000D /* WaypointModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000D /* WaypointModels.swift */; };
+		BF000001000000000000000E /* CollectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000E /* CollectionDetailView.swift */; };
 		BF000001000000000000000F /* FogGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000F /* FogGrid.swift */; };
+		BF0000010000000000000010 /* CarLocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000010 /* CarLocationMarker.swift */; };
+		BF0000010000000000000011 /* LearnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000011 /* LearnerPickerView.swift */; };
+		BF0000010000000000000012 /* DriveSimulationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000012 /* DriveSimulationRoute.swift */; };
+		BF0000010000000000000013 /* DriveSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000013 /* DriveSimulator.swift */; };
+		BF0000010000000000000014 /* SimulatorBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000014 /* SimulatorBootstrap.swift */; };
+		BF0000010000000000000015 /* TripLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000015 /* TripLogStore.swift */; };
+		BF0000010000000000000016 /* LoggedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR0000010000000000000016 /* LoggedTripsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,15 +38,22 @@
 		FR0000010000000000000004 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FR0000010000000000000005 /* VisitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitStore.swift; sourceTree = "<group>"; };
 		FR0000010000000000000006 /* AchievementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementStore.swift; sourceTree = "<group>"; };
-		FR000001000000000000000D /* WaypointModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointModels.swift; sourceTree = "<group>"; };
-		FR000001000000000000000E /* CollectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
 		FR0000010000000000000007 /* MapScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenView.swift; sourceTree = "<group>"; };
 		FR0000010000000000000008 /* TripHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHUDView.swift; sourceTree = "<group>"; };
 		FR0000010000000000000009 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FR000001000000000000000C /* waypoints */ = {isa = PBXFileReference; lastKnownFileType = folder; path = waypoints; sourceTree = "<group>"; };
+		FR000001000000000000000D /* WaypointModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointModels.swift; sourceTree = "<group>"; };
+		FR000001000000000000000E /* CollectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000F /* FogGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogGrid.swift; sourceTree = "<group>"; };
+		FR0000010000000000000010 /* CarLocationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLocationMarker.swift; sourceTree = "<group>"; };
+		FR0000010000000000000011 /* LearnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerPickerView.swift; sourceTree = "<group>"; };
+		FR0000010000000000000012 /* DriveSimulationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSimulationRoute.swift; sourceTree = "<group>"; };
+		FR0000010000000000000013 /* DriveSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveSimulator.swift; sourceTree = "<group>"; };
+		FR0000010000000000000014 /* SimulatorBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorBootstrap.swift; sourceTree = "<group>"; };
+		FR0000010000000000000015 /* TripLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLogStore.swift; sourceTree = "<group>"; };
+		FR0000010000000000000016 /* LoggedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedTripsView.swift; sourceTree = "<group>"; };
 		FR00000100000000000000D0 /* Driveabout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveabout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +104,7 @@
 				FR0000010000000000000003 /* Models.swift */,
 				FR000001000000000000000F /* FogGrid.swift */,
 				FR000001000000000000000D /* WaypointModels.swift */,
+				FR0000010000000000000012 /* DriveSimulationRoute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +115,9 @@
 				FR0000010000000000000004 /* LocationManager.swift */,
 				FR0000010000000000000005 /* VisitStore.swift */,
 				FR0000010000000000000006 /* AchievementStore.swift */,
+				FR0000010000000000000013 /* DriveSimulator.swift */,
+				FR0000010000000000000014 /* SimulatorBootstrap.swift */,
+				FR0000010000000000000015 /* TripLogStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -108,9 +126,12 @@
 			isa = PBXGroup;
 			children = (
 				FR0000010000000000000007 /* MapScreenView.swift */,
+				FR0000010000000000000010 /* CarLocationMarker.swift */,
+				FR0000010000000000000011 /* LearnerPickerView.swift */,
 				FR0000010000000000000008 /* TripHUDView.swift */,
 				FR0000010000000000000009 /* AchievementsView.swift */,
 				FR000001000000000000000A /* ProfileView.swift */,
+				FR0000010000000000000016 /* LoggedTripsView.swift */,
 				FR000001000000000000000E /* CollectionDetailView.swift */,
 			);
 			path = Views;
@@ -190,6 +211,13 @@
 				BF0000010000000000000002 /* ContentView.swift in Sources */,
 				BF0000010000000000000003 /* Models.swift in Sources */,
 				BF000001000000000000000F /* FogGrid.swift in Sources */,
+				BF0000010000000000000010 /* CarLocationMarker.swift in Sources */,
+				BF0000010000000000000011 /* LearnerPickerView.swift in Sources */,
+				BF0000010000000000000012 /* DriveSimulationRoute.swift in Sources */,
+				BF0000010000000000000013 /* DriveSimulator.swift in Sources */,
+				BF0000010000000000000014 /* SimulatorBootstrap.swift in Sources */,
+				BF0000010000000000000015 /* TripLogStore.swift in Sources */,
+				BF0000010000000000000016 /* LoggedTripsView.swift in Sources */,
 				BF0000010000000000000004 /* LocationManager.swift in Sources */,
 				BF0000010000000000000005 /* VisitStore.swift in Sources */,
 				BF0000010000000000000006 /* AchievementStore.swift in Sources */,
@@ -259,11 +287,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AL323LQ934;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Driveabout;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driveabout uses your location while a trip is active to reveal the map and record practice drives in the Eastern Suburbs.";
+				INFOPLIST_KEY_UIBackgroundModes = location;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -288,11 +318,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AL323LQ934;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Driveabout;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Driveabout uses your location while a trip is active to reveal the map and record practice drives in the Eastern Suburbs.";
+				INFOPLIST_KEY_UIBackgroundModes = location;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

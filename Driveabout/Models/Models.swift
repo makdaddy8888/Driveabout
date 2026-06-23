@@ -5,7 +5,7 @@ import Foundation
 enum Grid {
     static let defaultCellSizeM: Int = 100
     static let minAccuracyM: Double = 50
-    static let minSpeedMps: Double = 2.0
+    static let minSpeedMps: Double = 1.0
     static let reentryMinutes: Int = 10
 
     static func cellID(lat: Double, lng: Double, cellSizeM: Int = defaultCellSizeM) -> String {
@@ -158,6 +158,168 @@ struct GpsSample: Codable {
     let speedMps: Double?
     let accuracyM: Double?
     let tripID: UUID?
+
+    var speedKmh: Double? {
+        guard let speedMps, speedMps >= 0 else { return nil }
+        return speedMps * 3.6
+    }
+}
+
+// MARK: - Trip logs
+
+struct TripLoggedBadge: Codable, Identifiable, Hashable {
+    var id: String { "\(collectionID):\(tierID)" }
+    let collectionID: String
+    let collectionName: String
+    let tierID: String
+    let tierName: String
+    let earnedAt: Date
+}
+
+struct TripLoggedWaypoint: Codable, Identifiable, Hashable {
+    var id: String { "\(collectionID)::\(waypointID)" }
+    let waypointID: String
+    let collectionID: String
+    let waypointName: String?
+    let collectionName: String?
+    let confirmedAt: Date
+}
+
+/// Snapshot of everything a trip changed — used to rebuild fog and review history.
+struct LoggedTripOutcome: Codable {
+    var newCells: Int
+    var repeatCells: Int
+    var newCellIDs: [String]
+    var repeatCellIDs: [String]
+    var regionsVisited: [String]
+    var unlockedRegionIDsAtStart: [String]
+    var distanceM: Double
+    var durationSeconds: Double
+    var averageSpeedMps: Double?
+    var maxSpeedMps: Double?
+    var badgesEarned: [TripLoggedBadge]
+    var waypointsConfirmed: [TripLoggedWaypoint]
+
+    var regionsVisitedNames: [String] {
+        regionsVisited.compactMap { id in
+            PlayRegion.all.first(where: { $0.id == id })?.name
+        }
+    }
+}
+
+/// Raw GPS history for one drive — kept locally so the fog map can be rebuilt later.
+struct LoggedTrip: Identifiable, Codable {
+    let id: UUID
+    let profileID: UUID
+    let startedAt: Date
+    var endedAt: Date?
+    var walkMode: Bool
+    var simulated: Bool
+    var gridCellSizeM: Int
+    var samples: [GpsSample]
+    var outcome: LoggedTripOutcome?
+
+    var sampleCount: Int { samples.count }
+
+    var durationSeconds: TimeInterval {
+        if let outcome { return outcome.durationSeconds }
+        guard let endedAt else { return 0 }
+        return endedAt.timeIntervalSince(startedAt)
+    }
+
+    var distanceM: Double {
+        outcome?.distanceM ?? TripLogMetrics.distanceMeters(for: samples)
+    }
+
+    var maxSpeedMps: Double? {
+        outcome?.maxSpeedMps ?? TripLogMetrics.maxSpeedMps(for: samples)
+    }
+
+    var averageSpeedMps: Double? {
+        outcome?.averageSpeedMps ?? TripLogMetrics.averageSpeedMps(for: samples)
+    }
+
+    var newCells: Int { outcome?.newCells ?? 0 }
+    var repeatCells: Int { outcome?.repeatCells ?? 0 }
+}
+
+struct LoggedTripSummary: Identifiable, Codable {
+    let id: UUID
+    let profileID: UUID
+    let startedAt: Date
+    let endedAt: Date?
+    let sampleCount: Int
+    let walkMode: Bool
+    let simulated: Bool
+    let gridCellSizeM: Int
+    let durationSeconds: Double
+    let distanceM: Double
+    let newCells: Int
+    let repeatCells: Int
+    let regionsVisited: [String]
+    let maxSpeedMps: Double?
+    let averageSpeedMps: Double?
+    let badgesEarnedCount: Int
+    let waypointsConfirmedCount: Int
+
+    var regionsVisitedNames: [String] {
+        regionsVisited.compactMap { id in
+            PlayRegion.all.first(where: { $0.id == id })?.name
+        }
+    }
+}
+
+enum TripLogMetrics {
+    static func distanceMeters(for samples: [GpsSample]) -> Double {
+        let ordered = samples.sorted { $0.recordedAt < $1.recordedAt }
+        guard ordered.count >= 2 else { return 0 }
+
+        var total = 0.0
+        for index in 1..<ordered.count {
+            let previous = ordered[index - 1]
+            let current = ordered[index]
+            total += haversineMeters(
+                lat1: previous.lat, lng1: previous.lng,
+                lat2: current.lat, lng2: current.lng
+            )
+        }
+        return total
+    }
+
+    static func maxSpeedMps(for samples: [GpsSample]) -> Double? {
+        samples.compactMap(\.speedMps).filter { $0 >= 0 }.max()
+    }
+
+    static func averageSpeedMps(for samples: [GpsSample]) -> Double? {
+        let speeds = samples.compactMap(\.speedMps).filter { $0 >= 0 }
+        guard !speeds.isEmpty else { return nil }
+        return speeds.reduce(0, +) / Double(speeds.count)
+    }
+
+    static func regionsVisited(in samples: [GpsSample]) -> [String] {
+        var regionIDs = Set<String>()
+        for sample in samples {
+            if let region = PlayRegion.region(for: sample.lat, lng: sample.lng) {
+                regionIDs.insert(region.id)
+            }
+        }
+        return regionIDs.sorted()
+    }
+
+    static func durationSeconds(startedAt: Date, endedAt: Date?) -> TimeInterval {
+        guard let endedAt else { return 0 }
+        return max(0, endedAt.timeIntervalSince(startedAt))
+    }
+
+    private static func haversineMeters(lat1: Double, lng1: Double, lat2: Double, lng2: Double) -> Double {
+        let earthRadius = 6_371_000.0
+        let dLat = (lat2 - lat1) * .pi / 180
+        let dLng = (lng2 - lng1) * .pi / 180
+        let a = sin(dLat / 2) * sin(dLat / 2)
+            + cos(lat1 * .pi / 180) * cos(lat2 * .pi / 180) * sin(dLng / 2) * sin(dLng / 2)
+        let c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        return earthRadius * c
+    }
 }
 
 // MARK: - Fog
@@ -181,8 +343,8 @@ enum FogLevel {
     var opacity: Double {
         switch self {
         case .unexplored: return 1.0
-        case .discovered: return 0.35
-        case .familiar: return 0.15
+        case .discovered: return 0.08
+        case .familiar: return 0.03
         case .wellKnown: return 0.0
         }
     }
