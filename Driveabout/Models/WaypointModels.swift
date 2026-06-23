@@ -1,6 +1,6 @@
 import Foundation
 
-struct GeofenceBBox: Codable {
+struct GeofenceBBox: Codable, Hashable {
     let type: String
     let minLat: Double
     let minLng: Double
@@ -78,6 +78,7 @@ struct EarnedBadge: Codable, Identifiable, Hashable {
 }
 
 struct PendingWaypointConfirm: Identifiable, Equatable {
+    var id: String { waypointID }
     let waypointID: String
     let collectionID: String
     let collectionName: String

@@ -21,6 +21,7 @@
 		BF000001000000000000000A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000A /* ProfileView.swift */; };
 		BF000001000000000000000B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000B /* Assets.xcassets */; };
 		BF000001000000000000000C /* waypoints in Resources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000C /* waypoints */; };
+		BF000001000000000000000F /* FogGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR000001000000000000000F /* FogGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FR000001000000000000000A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FR000001000000000000000B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FR000001000000000000000C /* waypoints */ = {isa = PBXFileReference; lastKnownFileType = folder; path = waypoints; sourceTree = "<group>"; };
+		FR000001000000000000000F /* FogGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogGrid.swift; sourceTree = "<group>"; };
 		FR00000100000000000000D0 /* Driveabout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveabout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				FR0000010000000000000003 /* Models.swift */,
+				FR000001000000000000000F /* FogGrid.swift */,
 				FR000001000000000000000D /* WaypointModels.swift */,
 			);
 			path = Models;
@@ -186,6 +189,7 @@
 				BF0000010000000000000001 /* DriveaboutApp.swift in Sources */,
 				BF0000010000000000000002 /* ContentView.swift in Sources */,
 				BF0000010000000000000003 /* Models.swift in Sources */,
+				BF000001000000000000000F /* FogGrid.swift in Sources */,
 				BF0000010000000000000004 /* LocationManager.swift in Sources */,
 				BF0000010000000000000005 /* VisitStore.swift in Sources */,
 				BF0000010000000000000006 /* AchievementStore.swift in Sources */,

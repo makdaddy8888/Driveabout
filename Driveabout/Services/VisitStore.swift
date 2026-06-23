@@ -3,7 +3,10 @@ import Foundation
 @MainActor
 final class VisitStore: ObservableObject {
     @Published private(set) var profile: DriverProfile
-    @Published private(set) var visits: [String: CellVisit] = [:]
+    @Published private(set) var visits: [String: CellVisit] = [:] {
+        didSet { refreshFogOpacityMap() }
+    }
+    @Published private(set) var fogOpacityByCellID: [String: Double] = [:]
     @Published private(set) var unlockedRegions: UnlockedRegions = .default
     @Published private(set) var activeTrip: Trip?
     @Published private(set) var lastProcessedRegionName: String?
@@ -24,7 +27,48 @@ final class VisitStore: ObservableObject {
     ) {
         self.profile = profile
         self.cellSizeM = cellSizeM
+        refreshFogOpacityMap()
+        #if DEBUG
+        seedDemoVisitsIfNeeded()
+        #endif
     }
+
+    func fogOpacity(for cellID: String) -> Double {
+        fogOpacityByCellID[cellID] ?? 1.0
+    }
+
+    private func refreshFogOpacityMap() {
+        fogOpacityByCellID = FogGrid.buildOpacityMap(visits: visits, visitCellSizeM: cellSizeM)
+    }
+
+    #if DEBUG
+    /// Small CBD patch so fog-of-war is visible in the simulator without a drive.
+    private func seedDemoVisitsIfNeeded() {
+        guard visits.isEmpty else { return }
+        let samples: [(Double, Double)] = [
+            (-33.8688, 151.2093),
+            (-33.8692, 151.2098),
+            (-33.8684, 151.2088),
+            (-33.8696, 151.2102),
+            (-33.8678, 151.2082),
+        ]
+        let now = Date()
+        var seeded: [String: CellVisit] = [:]
+        for (lat, lng) in samples {
+            let cellID = Grid.cellID(lat: lat, lng: lng, cellSizeM: cellSizeM)
+            seeded[cellID] = CellVisit(
+                cellID: cellID,
+                profileID: profile.id,
+                firstVisitedAt: now,
+                lastVisitedAt: now,
+                visitCount: 1,
+                centroidLat: lat,
+                centroidLng: lng
+            )
+        }
+        visits = seeded
+    }
+    #endif
 
     var exploredCellCount: Int { visits.count }
     var wellKnownCellCount: Int { visits.values.filter { $0.visitCount >= 5 }.count }

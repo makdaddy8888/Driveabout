@@ -24,19 +24,35 @@ struct MapScreenView: View {
                 Map(position: $cameraPosition) {
                     UserAnnotation()
 
-                    ForEach(visitStore.visits.values) { visit in
-                        Annotation("", coordinate: visit.coordinate, anchor: .center) {
-                            Circle()
-                                .fill(Color.accentColor.opacity(1 - visit.fogLevel.opacity))
-                                .frame(width: 8, height: 8)
+                    ForEach(FogGrid.cells) { cell in
+                        let opacity = visitStore.fogOpacity(for: cell.id)
+                        if opacity > 0.02 {
+                            MapPolygon(coordinates: cell.polygonCoordinates)
+                                .foregroundStyle(Color.black.opacity(opacity * 0.82))
                         }
                     }
+
+                    MapPolygon(coordinates: EasternSuburbs.envelope.polygonCoordinates)
+                        .foregroundStyle(.clear)
+                        .stroke(Color.white.opacity(0.55), lineWidth: 2)
 
                     if showRegionOverlays {
                         ForEach(PlayRegion.all) { region in
                             MapPolygon(coordinates: region.bounds.polygonCoordinates)
                                 .foregroundStyle(regionOverlayColor(for: region))
-                                .stroke(regionStrokeColor(for: region), lineWidth: 1.5)
+                                .stroke(regionStrokeColor(for: region), lineWidth: 2.5)
+
+                            Annotation(region.name, coordinate: region.bounds.centerCoordinate, anchor: .center) {
+                                Text(region.name)
+                                    .font(.caption2.weight(.semibold))
+                                    .padding(.horizontal, 6)
+                                    .padding(.vertical, 3)
+                                    .background(.ultraThinMaterial, in: Capsule())
+                                    .overlay(
+                                        Capsule()
+                                            .strokeBorder(regionStrokeColor(for: region).opacity(0.8), lineWidth: 1)
+                                    )
+                            }
                         }
                     }
                 }
@@ -92,19 +108,13 @@ struct MapScreenView: View {
 
     private func regionOverlayColor(for region: PlayRegion) -> Color {
         if visitStore.unlockedRegions.isUnlocked(region.id) {
-            return Color.green.opacity(0.08)
+            return Color.green.opacity(0.10)
         }
-        return Color.orange.opacity(0.12)
+        return Color.orange.opacity(0.14)
     }
 
     private func regionStrokeColor(for region: PlayRegion) -> Color {
         visitStore.unlockedRegions.isUnlocked(region.id) ? .green : .orange
-    }
-}
-
-private extension CellVisit {
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: centroidLat, longitude: centroidLng)
     }
 }
 
@@ -116,6 +126,13 @@ private extension MapBounds {
             CLLocationCoordinate2D(latitude: maxLat, longitude: maxLng),
             CLLocationCoordinate2D(latitude: maxLat, longitude: minLng),
         ]
+    }
+
+    var centerCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: (minLat + maxLat) / 2,
+            longitude: (minLng + maxLng) / 2
+        )
     }
 }
 
